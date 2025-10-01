@@ -6,7 +6,7 @@ export default function Header({ onCartClick }) {
 return (
     <AppBar position="static">
         <Toolbar>
-            <img
+            {/* <img
                 src="../images/logo-ppal.png"
                 alt="Logo"
                 style={{
@@ -17,7 +17,7 @@ return (
                 }}
                 onMouseOver={e => (e.currentTarget.style.transform = "scale(1.1)")}
                 onMouseOut={e => (e.currentTarget.style.transform = "scale(1)")}
-            />
+            /> */}
             <img
                 src="./assets/image-5.png"
                 alt="Brand"
