@@ -55,7 +55,7 @@ export default function Cart({
   {/* 🔹 Imagen mascota */}
   <Box
     component="img"
-    src="../images/mascota.png"
+    src="../../images/mascota.png"
     alt="Mascota"
     sx={{ width: 80, height: 80, ml: 2 }}
   />
