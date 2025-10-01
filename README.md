@@ -90,7 +90,7 @@ src/
  │    ├── Header.jsx         # Barra superior con título
  │    ├── Footer.jsx         # Pie de página
  │    ├── ProductList.jsx    # Lista de productos desde API
- │    ├── Cart.jsx           # Carrito lateral con total y botones
+ │    └── Cart.jsx           # Carrito lateral con total y botones
  │
  ├── styles/
  │    └── ProductList.css    # Estilos adicionales
