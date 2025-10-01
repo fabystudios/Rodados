@@ -3,56 +3,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 90vw;
-    margin: 0 auto;
-    min-height: 80vh;
-    box-sizing: border-box;
-}
-
-.product-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin: 16px;
-    flex: 1 1 260px;
-    max-width: 320px;
-    min-width: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 24px;
-    box-sizing: border-box;
-    transition: box-shadow 0.2s;
-}
-
-.product-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-}
-
-@media (max-width: 900px) {
-    .product-list-container {
-        width: 98vw;
-        min-height: 60vh;
-    }
-    .product-card {
-        max-width: 90vw;
-        min-width: 180px;
-        margin: 12px;
-        padding: 16px;
-    }
-}
-
-@media (max-width: 600px) {
-    .product-list-container {
-        flex-direction: column;
-        align-items: center;
-        width: 100vw;
-        min-height: 40vh;
-    }
-    .product-card {
-        max-width: 98vw;
-        min-width: 140px;
-        margin: 8px 0;
-        padding: 12px;
-    }
+    margin-left: auto;
+    margin-right: auto;
 }
