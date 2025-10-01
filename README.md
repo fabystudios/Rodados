@@ -1,4 +1,4 @@
-# 🛍️ React eCommerce App Talento Techo 2do cuat 2025
+# 🛍️ React eCommerce App - Talento Tech 2do cuat 2025
 
 <img src="https://img.shields.io/badge/React-18.0-blue?logo=react" alt="React" />
 <img src="https://img.shields.io/badge/Vite-5.0-646CFF?logo=vite&logoColor=white" alt="Vite" />
@@ -18,7 +18,7 @@ Incluye un **catálogo de productos** consumidos desde una API externa y un **ca
 - [🧑‍💻 Autor](#-autor)
 - [📝 Licencia](#-licencia) -->
 ---
-<img src="image-3.png" alt="alt text" width="50%" />
+<img src="./assets/image-5.png" alt="alt text" width="50%" />
 
 ## ✨ Características
 
@@ -36,10 +36,10 @@ Incluye un **catálogo de productos** consumidos desde una API externa y un **ca
 ## 📸 Vista previa
 
 ### 🖥️ Catálogo de productos
-<img src="image.png" alt="alt text" width="50%" />
+<img src="./assets/image.png" alt="alt text" width="50%" />
 
 ### 🛒 Carrito lateral
-<img src="image-2.png" alt="alt text" width="50%" />
+<img src="./assets/image-2.png" alt="alt text" width="50%" />
 
 ---
 
@@ -112,7 +112,6 @@ Este proyecto se publica bajo la licencia MIT.
 Eres libre de usarlo, modificarlo y adaptarlo a tus necesidades. 🎉
 
 
- # 🛍️ React eCommerce App
 
 
 

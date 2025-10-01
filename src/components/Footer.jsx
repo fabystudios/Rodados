@@ -38,9 +38,21 @@ export default function Footer() {
     return (
         <FooterContainer component="footer">
             <FooterContent sx={{ gap: 1 }}>
-                <Box sx={{ my: 0.2 }}>
+                 <img
+                src="./assets/image-5.png"
+                alt="Brand"
+                style={{
+                    height: 80,
+                    marginRight: 16,
+                    transition: "transform 0.2s",
+                    cursor: "pointer"
+                }}
+                onMouseOver={e => (e.currentTarget.style.transform = "scale(1.2)")}
+                onMouseOut={e => (e.currentTarget.style.transform = "scale(1)")}
+            />
+                {/* <Box sx={{ my: 0.2 }}>
                     <Logo src="/images/mascota-modal.png" alt="Logo" style={{ width: "5%" }} />
-                </Box>
+                </Box> */}
                 <SocialIcons sx={{ mb: 0.2 }}>
                     <IconButton component="a" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" color="inherit" size="small">
                         <FacebookIcon fontSize="small" />

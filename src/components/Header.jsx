@@ -9,12 +9,26 @@ return (
             <img
                 src="../images/logo-ppal.png"
                 alt="Logo"
-                style={{ height: 70, marginRight: 16 }}
+                style={{
+                    height: 50,
+                    marginRight: 16,
+                    transition: "transform 0.2s",
+                    cursor: "pointer"
+                }}
+                onMouseOver={e => (e.currentTarget.style.transform = "scale(1.1)")}
+                onMouseOut={e => (e.currentTarget.style.transform = "scale(1)")}
             />
             <img
-                src="../images/brand.png"
+                src="./assets/image-5.png"
                 alt="Brand"
-                style={{ height: 40, marginRight: 16 }}
+                style={{
+                    height: 40,
+                    marginRight: 16,
+                    transition: "transform 0.2s",
+                    cursor: "pointer"
+                }}
+                onMouseOver={e => (e.currentTarget.style.transform = "scale(1.2)")}
+                onMouseOut={e => (e.currentTarget.style.transform = "scale(1)")}
             />
             <Typography
                 variant="h6"
@@ -25,11 +39,11 @@ return (
                     letterSpacing: 0.5,
                 }}
             >
-                <img
+                {/* <img
                     src="../images/logo-coni.png"
                     alt="Coni"
                     style={{ height: 90, verticalAlign: "middle", marginLeft: 0 }}
-                />
+                /> */}
             </Typography>
 
             <IconButton color="inherit" onClick={onCartClick}>
