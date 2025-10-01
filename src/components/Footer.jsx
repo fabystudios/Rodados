@@ -1,0 +1,70 @@
+import React from "react";
+import { Box, Typography, IconButton } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import { styled } from "@mui/material/styles";
+import "../styles/footer.css";
+
+const FooterContainer = styled(Box)(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
+    color: "white",
+    textAlign: "center",
+    padding: theme.spacing(3, 0),
+}));
+
+const FooterContent = styled(Box)({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 16,
+});
+
+const Logo = styled("img")({
+    width: "10%",
+    minWidth: 80,
+    maxWidth: 120,
+});
+
+const SocialIcons = styled(Box)({
+    display: "flex",
+    gap: 12,
+    justifyContent: "center",
+});
+
+export default function Footer() {
+    return (
+        <FooterContainer component="footer">
+            <FooterContent sx={{ gap: 1 }}>
+                <Box sx={{ my: 0.2 }}>
+                    <Logo src="/images/mascota-modal.png" alt="Logo" style={{ width: "5%" }} />
+                </Box>
+                <SocialIcons sx={{ mb: 0.2 }}>
+                    <IconButton component="a" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" color="inherit" size="small">
+                        <FacebookIcon fontSize="small" />
+                    </IconButton>
+                    <IconButton component="a" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" color="inherit" size="small">
+                        <InstagramIcon fontSize="small" />
+                    </IconButton>
+                    <IconButton component="a" href="https://wa.me/" target="_blank" rel="noopener noreferrer" color="inherit" size="small">
+                        <WhatsAppIcon fontSize="small" />
+                    </IconButton>
+                    <IconButton component="a" href="https://telegram.org" target="_blank" rel="noopener noreferrer" color="inherit" size="small">
+                        <TelegramIcon fontSize="small" />
+                    </IconButton>
+                    <IconButton component="a" href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" color="inherit" size="small">
+                        <TwitterIcon fontSize="small" />
+                    </IconButton>
+                </SocialIcons>
+                <Box sx={{ mt: 0.1 }}>
+                    <Typography variant="body2" sx={{ lineHeight: 1 }}>
+                        &copy; 2024 Rodados eShop.<br />
+                        Todos los derechos reservados.
+                    </Typography>
+                </Box>
+            </FooterContent>
+        </FooterContainer>
+    );
+}
