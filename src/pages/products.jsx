@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { Box } from "@mui/material";
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import Cart from "./Cart";
+// src/pages/Products.jsx
+import Header from "../components/Header";
 
-export default function Layout() {
+
+
+import React, { useState, useEffect } from "react";
+import { Box, Fab } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ProductList from "../components/ProductList";
+import Cart from "../components/Cart";
+import "../styles/ProductList.css";
+export default function Products() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
 
-  // 🔹 Cargar carrito desde localStorage
+  // Cargar carrito desde localStorage
   useEffect(() => {
     const savedCart = localStorage.getItem("cartItems");
     if (savedCart) setCartItems(JSON.parse(savedCart));
   }, []);
 
-  // 🔹 Guardar carrito en localStorage
+  // Guardar carrito en localStorage
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -61,29 +65,34 @@ export default function Layout() {
     setCartItems([]);
   };
 
-  return (
-    <Box display="flex" flexDirection="column" minHeight="100vh">
-      {/* 🔹 Header global */}
-      <Header onCartClick={() => setCartOpen(true)} />
+ return (
+    <>
+      {/* ✅ Header con carrito funcionando */}
+      {/* <Header onCartClick={() => setCartOpen(true)} /> */}
 
-      {/* 🔹 Aquí React Router inyecta la página correspondiente */}
-      <Box component="main" flexGrow={1} p={2}>
-        <Outlet context={{ addToCart }} />
+      <Box sx={{ p: 2 }}>
+        <ProductList onAddToCart={addToCart} />
+
+        <Fab
+          color="primary"
+          aria-label="cart"
+          sx={{ position: "fixed", bottom: 16, right: 16 }}
+          onClick={() => setCartOpen(true)}
+        >
+          <ShoppingCartIcon />
+        </Fab>
+
+        <Cart
+          open={cartOpen}
+          onClose={() => setCartOpen(false)}
+          items={cartItems}
+          increaseQty={increaseQty}
+          decreaseQty={decreaseQty}
+          removeItem={removeItem}
+          clearCart={clearCart}
+        />
       </Box>
-
-      {/* 🔹 Footer global */}
-      <Footer />
-
-      {/* 🔹 Drawer del carrito, disponible en todas las páginas */}
-      <Cart
-        open={cartOpen}
-        onClose={() => setCartOpen(false)}
-        items={cartItems}
-        increaseQty={increaseQty}
-        decreaseQty={decreaseQty}
-        removeItem={removeItem}
-        clearCart={clearCart}
-      />
-    </Box>
+    </>
   );
+
 }

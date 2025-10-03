@@ -93,6 +93,7 @@ src/
  │    └── Cart.jsx           # Carrito lateral con total y botones
  │
  ├── styles/
+ │    ├── Footer.css         # Estilos adicionales del footer
  │    └── ProductList.css    # Estilos adicionales
  │
  ├── App.jsx                 # Punto de entrada de la app

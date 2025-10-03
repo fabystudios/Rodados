@@ -24,10 +24,9 @@ export default function Cart({
   removeItem,
   clearCart,
 }) {
-  const total = items.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  const total = items
+    .reduce((acc, item) => acc + item.price * item.quantity, 0)
+    .toFixed(2);
 
   return (
     <Drawer anchor="right" open={open} onClose={onClose}>
@@ -55,9 +54,9 @@ export default function Cart({
   {/* 🔹 Imagen mascota */}
   <Box
     component="img"
-    src="../../images/mascota.png"
+    src="../../assets/compras.png"
     alt="Mascota"
-    sx={{ width: 80, height: 80, ml: 2 }}
+    sx={{ width: 120, ml: 2 }}
   />
 </Paper>
 
@@ -67,7 +66,15 @@ export default function Cart({
         {/* 🔹 Lista de productos */}
         <Box flexGrow={1} overflow="auto">
           {items.length === 0 ? (
-            <Typography variant="body2">Tu carrito está vacío</Typography>
+          <Box display="flex" alignItems="center">
+            <Box
+              component="img"
+              src="../../assets/carrito.png"
+              alt="Carrito"
+              sx={{ width: 150, ml: 1 }}
+            />
+          <Typography variant="body2">Tu carrito está vacío</Typography>
+          </Box>
           ) : (
             <List>
               {items.map((item) => (

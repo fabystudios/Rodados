@@ -9,7 +9,7 @@ import { styled } from "@mui/material/styles";
 import "../styles/footer.css";
 
 const FooterContainer = styled(Box)(({ theme }) => ({
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: '#108e1c',
     color: "white",
     textAlign: "center",
     padding: theme.spacing(3, 0),
@@ -39,7 +39,7 @@ export default function Footer() {
         <FooterContainer component="footer">
             <FooterContent sx={{ gap: 1 }}>
                  <img
-                src="./assets/image-5.png"
+                src="../assets/image-5.png"
                 alt="Brand"
                 style={{
                     height: 80,
@@ -72,7 +72,7 @@ export default function Footer() {
                 </SocialIcons>
                 <Box sx={{ mt: 0.1 }}>
                     <Typography variant="body2" sx={{ lineHeight: 1 }}>
-                        &copy; 2024 Rodados eShop.<br />
+                        &copy; 2025 Rodados eShop.<br />
                         Todos los derechos reservados.
                     </Typography>
                 </Box>
