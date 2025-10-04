@@ -8,42 +8,45 @@ import {
   Typography,
   Button,
   Box,
+  Badge,
+  useTheme,
+  Stack,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
- 
+
 import "../styles/ProductList.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 
-// Estilos MD3 para Card y Button
+// Estilos MD3 para Card y Button - Glassmorphism como Home
 const StyledCard = styled(Card)(({ theme }) => ({
-  borderRadius: 24,
-  boxShadow:
-    "0px 2px 8px rgba(0,0,0,0.08), 0px 1.5px 6px rgba(0,0,0,0.12)",
-  transition: "transform 0.2s cubic-bezier(.4,0,.2,1), box-shadow 0.2s",
+  borderRadius: 20,
+  background: theme.palette.mode === 'dark' 
+    ? 'rgba(30, 30, 30, 0.95)' 
+    : 'rgba(255, 255, 255, 0.95)',
+  backdropFilter: 'blur(10px)',
+  border: theme.palette.mode === 'dark'
+    ? '1px solid rgba(255, 255, 255, 0.1)'
+    : '1px solid rgba(255, 255, 255, 0.3)',
+  boxShadow: theme.palette.mode === 'dark'
+    ? '0 8px 32px rgba(255, 255, 255, 0.1)'
+    : '0 8px 32px rgba(0, 0, 0, 0.1)',
+  transition: "all 0.3s ease",
+  overflow: 'hidden',
+  display: 'flex',
+  flexDirection: 'column',
   "&:hover": {
-    transform: "translateY(-4px) scale(1.02)",
-    boxShadow:
-      "0px 4px 16px rgba(0,0,0,0.12), 0px 3px 12px rgba(0,0,0,0.16)",
+    transform: "translateY(-5px) scale(1.02)",
+    boxShadow: theme.palette.mode === 'dark'
+      ? '0 20px 40px rgba(255, 255, 255, 0.15)'
+      : '0 20px 40px rgba(0, 0, 0, 0.15)',
   },
 }));
 
-const StyledButton = styled(Button)(({ theme }) => ({
-  borderRadius: "999px",
-  width: "100%",
-  textTransform: "none",
-  fontWeight: 500,
-  fontSize: "1rem",
-  padding: "10px 0",
-  boxShadow: "0px 1px 4px rgba(0,0,0,0.10)",
-  background: "linear-gradient(90deg, #6750A4 0%, #D0BCFF 100%)",
-  color: "#fff",
-  "&:hover": {
-    background: "linear-gradient(90deg, #7F67BE 0%, #B69DF8 100%)",
-  },
-}));
 
-export default function ProductList({ onAddToCart }) {
+
+export default function ProductList({ onAddToCart, cartItems = [] }) {
+  const theme = useTheme();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -53,11 +56,23 @@ export default function ProductList({ onAddToCart }) {
       .catch((err) => console.error("Error al cargar productos:", err));
   }, []);
 
+  // Función para obtener la cantidad de un producto en el carrito
+  const getCartQuantity = (productId) => {
+    const cartItem = cartItems.find(item => item.id === productId);
+    return cartItem ? cartItem.quantity : 0;
+  };
+
   return (
     <Grid container spacing={3} justifyContent="center">
       {products.length === 0 ? (
         <Box sx={{ width: "100%", textAlign: "center", mt: 2 }}>
-          <Typography variant="h6" sx={{ mb: 2, textShadow: "2px 2px 8px rgba(0,0,0,0.18)" }}>
+          <Typography variant="h6" sx={{ 
+            mb: 2, 
+            color: theme.palette.mode === 'dark' ? '#bb86fc' : 'inherit',
+            textShadow: theme.palette.mode === 'dark'
+              ? "2px 2px 8px rgba(0,0,0,0.5)"
+              : "2px 2px 8px rgba(0,0,0,0.18)"
+          }}>
             Cargando productos...
           </Typography>
           <img
@@ -79,107 +94,144 @@ export default function ProductList({ onAddToCart }) {
               justifyContent: "center",
             }}
           >
-            <StyledCard
+            <Badge
+              badgeContent={getCartQuantity(product.id)}
               sx={{
-                height: 380,
-                width: 260,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                boxShadow: "0px 8px 24px rgba(0,0,0,0.18)", // sombra paralela
+                "& .MuiBadge-badge": {
+                  background: "linear-gradient(45deg, #ff6b6b, #ee5a24)",
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: "0.8rem",
+                  minWidth: "24px",
+                  height: "24px",
+                  borderRadius: "12px",
+                  border: "2px solid white",
+                  boxShadow: "0 2px 8px rgba(255, 107, 107, 0.4)",
+                  animation: getCartQuantity(product.id) > 0 ? "pulse 2s infinite" : "none",
+                  "@keyframes pulse": {
+                    "0%": { transform: "scale(1)" },
+                    "50%": { transform: "scale(1.1)" },
+                    "100%": { transform: "scale(1)" }
+                  }
+                }
               }}
             >
-              <Box
+              <StyledCard
                 sx={{
-                  width: "100%",
-                  height: 180,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: "#f5f5f5",
-                  borderTopLeftRadius: 24,
-                  borderTopRightRadius: 24,
-                  overflow: "hidden",
+                  width: 260,
+                  height: 380,
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
               >
+              <Box sx={{ 
+                height: 200, 
+                background: theme.palette.mode === 'dark' 
+                  ? 'linear-gradient(135deg, #7c4dff 0%, #9c27b0 50%, #673ab7 100%)'
+                  : '#f5f5f5',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden'
+              }}>
                 <CardMedia
                   component="img"
                   image={product.image || "https://via.placeholder.com/200"}
                   alt={product.name}
                   sx={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
-                    objectFit: "contain",
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    objectFit: 'contain',
+                    p: 2,
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.1)'
+                    }
                   }}
                 />
               </Box>
-              <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <Box>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontWeight: 600,
-                      textShadow: "2px 2px 8px rgba(0,0,0,0.18)", // sombra paralela al texto
-                    }}
-                  >
+              <CardContent sx={{ 
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                height: 180, // Altura fija para el contenido
+                p: 2
+              }}>
+                <Box sx={{ height: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <Typography variant="h6" sx={{ 
+                    mb: 1, 
+                    fontWeight: 'bold',
+                    color: theme.palette.mode === 'dark' ? '#ffffff' : '#333333',
+                    fontSize: '1rem',
+                    lineHeight: 1.3,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                  }}>
                     {product.name}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      mb: 2,
-                      textShadow: "8px 8px 10px rgba(0,0,0,0.18)", // sombra paralela al texto
+                  <Typography 
+                    variant="h6" 
+                    sx={{ 
+                      fontWeight: 'bold', 
+                      color: '#4CAF50',
+                      fontSize: '1.2rem'
                     }}
                   >
                     ${product.price}
                   </Typography>
                 </Box>
-                {/* Botón naranja degradado con marginBottom */}
-                <StyledButton
-                component={Link}
-                to={`/productos/${product.id}`}   // 👈 va al detalle dinámico
-                sx={{
-                  mb: 2,
-                  mt: "auto",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 1,
-                  background: "linear-gradient(90deg, #f67207 0%, #FFD180 100%)",
-                  color: "#fff",
-                  "&:hover": {
-                    background: "linear-gradient(90deg, #fb7500fb 0%, #FFB74D 100%)",
-                  },
-                }}
-                startIcon={<TravelExploreIcon />}
-              >
-                Ver Detalle
-              </StyledButton>
-
-                <StyledButton
-                  variant="contained"
-                  onClick={() => onAddToCart(product)}
-                  sx={{
-                    mt: "auto",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 1,
-                    textShadow: "1px 1px 6px rgba(0,0,0,0.18)", // sombra paralela al texto del botón
-                  }}
-                  startIcon={
-                    <AddShoppingCartIcon
-                      sx={{
-                        filter: "drop-shadow(2px 2px 6px rgba(0,0,0,0.18))", // sombra paralela al icono
-                      }}
-                    />
-                  }
-                >
-                  Agregar al carrito
-                </StyledButton>
+                <Stack spacing={1.5} sx={{ mt: 'auto' }}>
+                  <Button
+                    variant="outlined"
+                    fullWidth
+                    component={Link}
+                    to={`/productos/${product.id}`}
+                    sx={{
+                      borderColor: '#1976d2',
+                      color: '#1976d2',
+                      borderWidth: 2,
+                      borderRadius: '15px',
+                      py: 0.8,
+                      fontSize: '0.9rem',
+                      fontWeight: 'bold',
+                      '&:hover': {
+                        borderWidth: 2,
+                        borderColor: '#1976d2',
+                        background: 'rgba(25, 118, 210, 0.1)',
+                        transform: 'translateY(-1px)'
+                      }
+                    }}
+                  >
+                    Ver Detalles
+                  </Button>
+                  <Button
+                    variant="contained"
+                    fullWidth
+                    startIcon={<AddShoppingCartIcon />}
+                    onClick={() => onAddToCart(product)}
+                    sx={{
+                      background: 'linear-gradient(45deg, #4CAF50, #81C784)',
+                      borderRadius: '15px',
+                      py: 0.8,
+                      fontSize: '0.9rem',
+                      fontWeight: 'bold',
+                      '&:hover': {
+                        background: 'linear-gradient(45deg, #388E3C, #66BB6A)',
+                        transform: 'translateY(-1px)',
+                        boxShadow: '0 4px 12px rgba(76, 175, 80, 0.4)'
+                      }
+                    }}
+                  >
+                    Agregar al Carrito
+                  </Button>
+                </Stack>
               </CardContent>
             </StyledCard>
+            </Badge>
           </Grid>
         ))
       )}

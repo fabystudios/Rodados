@@ -2,16 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
-import ProductDetail from "./pages/productDetails"; //
+import BottomNavigation from "./components/BottomNavigation";
 
 // Pages
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import About from "./pages/About";
+import Home from "./pages/home";
+import Products from "./pages/products";       
+import ProductDetail from "./pages/productDetails"; 
+import About from "./pages/about";
 
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -70,49 +72,67 @@ export default function App() {
   };
 
   return (
-    <Router>
-      <Box display="flex" flexDirection="column" minHeight="100vh">
-        {/* 🔹 Header fijo en todas las páginas */}
-        <Header onCartClick={() => setCartOpen(true)} />
+    <ThemeProvider>
+      <Router>
+        <Box display="flex" flexDirection="column" minHeight="100vh">
+          {/* 🔹 Header fijo en todas las páginas */}
+          <Header onCartClick={() => setCartOpen(true)} cartItems={cartItems} />
 
         {/* 🔹 Contenido dinámico según ruta */}
         <Box component="main" flexGrow={1} p={2}>
           <Routes>
-            <Route path="/" element={<Home />} />
-        <Route
-          path="/productos"
-          element={
-            <Products
-              cartItems={cartItems}
-              addToCart={addToCart}
-              increaseQty={increaseQty}
-              decreaseQty={decreaseQty}
-              removeItem={removeItem}
-              clearCart={clearCart}
+            <Route 
+              path="/" 
+              element={
+                <Home 
+                  onAddToCart={addToCart}
+                  cartItems={cartItems}
+                />
+              } 
             />
-          }
-        />
 
-        <Route
-          path="/productos/:id"
-          element={
-            <ProductDetail
-              cartItems={cartItems}
-              onAddToCart={addToCart}
-              increaseQty={increaseQty}
-              decreaseQty={decreaseQty}
-              removeItem={removeItem}
-              clearCart={clearCart}
+            <Route
+              path="/productos"
+              element={
+                <Products
+                  cartItems={cartItems}
+                  addToCart={addToCart}
+                  increaseQty={increaseQty}
+                  decreaseQty={decreaseQty}
+                  removeItem={removeItem}
+                  clearCart={clearCart}
+                />
+              }
             />
-          }
-        />
+
+            <Route
+              path="/productos/:id"
+              element={
+                <ProductDetail
+                  cartItems={cartItems}
+                  onAddToCart={addToCart}
+                  increaseQty={increaseQty}
+                  decreaseQty={decreaseQty}
+                  removeItem={removeItem}
+                  clearCart={clearCart}
+                />
+              }
+            />
 
             <Route path="/nosotros" element={<About />} />
           </Routes>
         </Box>
 
-        {/* 🔹 Footer fijo en todas las páginas */}
-        <Footer />
+        {/* 🔹 Footer - Solo visible en desktop */}
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Footer />
+        </Box>
+
+        {/* 🔹 Bottom Navigation - Solo visible en móvil */}
+        <BottomNavigation 
+          onCartClick={() => setCartOpen(true)}
+          cartItems={cartItems}
+        />
 
         {/* 🔹 Drawer del carrito */}
         <Cart
@@ -124,7 +144,14 @@ export default function App() {
           removeItem={removeItem}
           clearCart={clearCart}
         />
-      </Box>
-    </Router>
+
+        {/* 🔹 Padding bottom para móvil - evita que el contenido se oculte detrás del BottomNav */}
+        <Box sx={{ 
+          height: { xs: 70, md: 0 },  // Altura del BottomNavigation
+          display: { xs: 'block', md: 'none' }
+        }} />
+        </Box>
+      </Router>
+    </ThemeProvider>
   );
 }

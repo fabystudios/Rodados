@@ -9,7 +9,9 @@ import { styled } from "@mui/material/styles";
 import "../styles/footer.css";
 
 const FooterContainer = styled(Box)(({ theme }) => ({
-    backgroundColor: '#108e1c',
+    background: theme.palette.mode === 'dark'
+        ? 'linear-gradient(135deg, #4a148c 0%, #7c4dff 100%)'
+        : '#108e1c',
     color: "white",
     textAlign: "center",
     padding: theme.spacing(3, 0),
