@@ -1,7 +1,52 @@
 # � Rodados eShop - Tienda Virtual Premium
 
 <div align="center">
-  <img src="./assets/logo-ppal.png" alt="Rodados eShop Logo" width="200"/>
+  <img src="./assets## � Vista Previa
+
+### 🌅 **Página de Inicio - Modo Claro**
+<img src="assets/home-light.png" alt="Home Light Mode - Rodados eShop" width="80%" />
+
+### 🌙 **Catálogo de Productos - Modo Oscuro**
+<img src="assets/products-dark.png" alt="Products Dark Mode - Glassmorphism Cards" width="80%" />
+
+### 🛒 **Carrito de Compras Premium**
+<img src="assets/cart-open4.png" alt="Shopping Cart - Premium Design" width="60%" />
+
+### 📱 **Navegación Móvil Atómica**
+<img src="assets/mobile-nav.png" alt="Bottom Navigation - Atomic Design" width="40%" />
+
+### 👥 **Página Nosotros**
+<img src="assets/about-page.png" alt="About Page - Glassmorphism Design" width="80%" />
+
+### 🎨 **Theme Toggle en Acción**
+<img src="assets/theme-demo.gif" alt="Dark/Light Theme Switching Animation" width="60%" />
+
+---
+
+### ✨ **Características Visuales Destacadas:**
+- 🎨 **Glassmorphism Design** con efectos de cristal translúcido
+- 🌈 **Sistema de Temas** con transiciones suaves
+- 📱 **Bottom Navigation** con posicionamiento atómico y bordes temáticos
+- 🛒 **Carrito Premium** con badges animados y efectos hover
+- 🎭 **Animaciones Fluidas** en todos los componentes
+- 🎯 **UX Consistente** en desktop y móvil
+
+### 🛍️ **Catálogo de Productos**
+<img src="assets/image.png" alt="Product Catalog" width="70%" />
+
+### 🎨 **Comparación de Temas**
+<div style="display: flex; gap: 10px;">
+  <img src="assets/image-4.png" alt="Light Theme" width="48%" />
+  <img src="assets/image-1.png" alt="Dark Theme" width="48%" />
+</div>
+
+> **📷 Nota:** Para mejor visualización, recomendamos tomar capturas de pantalla frescas de:
+> - Página de inicio en modo claro
+> - Página de productos en modo oscuro  
+> - Carrito abierto con productos
+> - Bottom Navigation móvil
+> - Página "Nosotros" con animaciones
+> - Theme toggle en acciónppal.png" alt="Rodados eShop Logo" width="200"/>
 </div>
 
 <div align="center">
@@ -78,16 +123,17 @@
 ## 📸 Vista Previa
 
 ### 🌅 **Modo Claro - Home**
-<img src="./assets/image-5.png" alt="Home Light Mode" width="70%" />
+<img src="assets/image-5.png" alt="Home Light Mode" width="70%" />
 
-### 🌙 **Modo Oscuro - Glassmorphism**
-*Interfaz con efectos de cristal translúcido y gradientes púrpura*
+### 🌙 **Modo Oscuro - Productos**
+<img src="assets/image-1.png" alt="Products Dark Mode" width="70%" />
 
-### 📱 **Navegación Móvil Atómica**
-*Bottom Navigation con posicionamiento matemático y bordes temáticos*
+### 📱 **Navegación y Carrito**
+<img src="assets/image-2.png" alt="Cart Premium" width="50%" />
+<img src="assets/image-3.png" alt="Mobile Navigation" width="45%" />
 
-### 🛒 **Carrito Premium**
-<img src="./assets/image-2.png" alt="Cart Premium" width="50%" />
+### �️ **Catálogo de Productos**
+<img src="assets/image.png" alt="Product Catalog" width="70%" />
 
 ---
 
