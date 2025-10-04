@@ -185,7 +185,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 animation: 'float 3s ease-in-out infinite'
               }}>
                 <img
-                  src="../images/mascota2.png"
+                  src="/Rodados/images/mascota2.png"
                   alt="Mascota Rodados"
                   style={{
                     width: "100%",
@@ -295,7 +295,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 Cargando productos destacados...
               </Typography>
               <img
-                src="../assets/spinner.png"
+                src="/Rodados/assets/spinner.png"
                 alt="Cargando"
                 style={{ width: 100, height: "auto", opacity: 0.7 }}
               />

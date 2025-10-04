@@ -164,7 +164,7 @@ export default function Cart({
           </Box>
           <Box
             component="img"
-            src="../../assets/compras.png"
+            src="/Rodados/assets/compras.png"
             alt="Mascota"
             sx={{ 
               width: 80, 
@@ -197,7 +197,7 @@ export default function Cart({
             >
               <Box
                 component="img"
-                src="../assets/carrito.png"
+                src="/Rodados/assets/carrito.png"
                 alt="Carrito vacío"
                 sx={{
                   width: 120,

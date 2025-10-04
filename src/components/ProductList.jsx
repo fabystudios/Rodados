@@ -76,7 +76,7 @@ export default function ProductList({ onAddToCart, cartItems = [] }) {
             Cargando productos...
           </Typography>
           <img
-            src="../assets/spinner.png"
+            src="/Rodados/assets/spinner.png"
             alt="Cargando"
             style={{ width: 150,  display: "inline-block" }}
           />

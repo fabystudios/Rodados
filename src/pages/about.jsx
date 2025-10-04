@@ -59,7 +59,7 @@ export default function About() {
             display: { xs: 'none', md: 'block' }
           }}>
             <img
-              src="../images/mascota.png"
+              src="/Rodados/images/mascota.png"
               alt="Mascota 1"
               style={{
                 width: 120,
@@ -80,7 +80,7 @@ export default function About() {
             display: { xs: 'none', md: 'block' }
           }}>
             <img
-              src="../images/mascota2.png"
+              src="/Rodados/images/mascota2.png"
               alt="Mascota 2"
               style={{
                 width: 100,
@@ -94,7 +94,7 @@ export default function About() {
           {/* Logo Principal */}
           <Box sx={{ mb: 4, position: 'relative', zIndex: 3 }}>
             <img
-              src="../assets/logotipo-top.png"
+              src="/Rodados/assets/logotipo-top.png"
               alt="Rodados eShop"
               style={{
                 width: '100%',
@@ -250,7 +250,7 @@ export default function About() {
               <CardMedia
                 component="img"
                 height="300"
-                image="../../assets/team.jpg"
+                image="/Rodados/assets/team.jpg"
                 alt="Nuestro equipo"
                 sx={{
                   cursor: "pointer",
@@ -261,7 +261,7 @@ export default function About() {
                     filter: 'brightness(1.2) saturate(1.3)'
                   }
                 }}
-                onClick={() => handleImageClick("../../assets/team.jpg", "Nuestro equipo")}
+                onClick={() => handleImageClick("/Rodados/assets/team.jpg", "Nuestro equipo")}
               />
               
               <CardContent sx={{ p: 4 }}>
@@ -332,7 +332,7 @@ export default function About() {
               <CardMedia
                 component="img"
                 height="300"
-                image="../../assets/office.jpg"
+                image="/Rodados/assets/office.jpg"
                 alt="Nuestra tienda"
                 sx={{
                   cursor: "pointer",
@@ -343,7 +343,7 @@ export default function About() {
                     filter: 'brightness(1.2) saturate(1.3)'
                   }
                 }}
-                onClick={() => handleImageClick("../../assets/office.jpg", "Nuestra tienda")}
+                onClick={() => handleImageClick("/Rodados/assets/office.jpg", "Nuestra tienda")}
               />
               
               <CardContent sx={{ p: 4 }}>
@@ -376,7 +376,7 @@ export default function About() {
           display: { xs: 'block', md: 'none' }
         }}>
           <img
-            src="../images/coni.png"
+            src="/Rodados/images/coni.png"
             alt="Mascota Coni"
             style={{
               width: 150,

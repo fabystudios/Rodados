@@ -84,7 +84,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
 
         <Box
           component="img"
-          src="../assets/logo-ppal.png"
+          src="/Rodados/assets/logo-ppal.png"
           alt="MiTienda Logo"
           sx={{ 
             height: 65,
@@ -229,7 +229,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
           >
             <Box
               component="img"
-              src="../assets/logo-ppal.png"
+              src="/Rodados/assets/logo-ppal.png"
               alt="MiTienda Logo"
               sx={{ height: { xs: 50, sm: 80 } }}
             />
@@ -247,7 +247,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
           >
             <Box
               component="img"
-              src="../assets/texto-marca.png"
+              src="/Rodados/assets/texto-marca.png"
               alt="Marca"
               sx={{ height: { xs: 30, sm: 50 } }}
             />

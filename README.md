@@ -5,7 +5,7 @@
 
 <br>
 
-<img src="assets/logo-ppal.png" alt="Rodados eShop - Logo Premium" width="200" style="margin: 20px 0;"/>
+  <img src="https://fabystudios.github.io/Rodados/assets/logo-ppal.png" alt="Rodados eShop Logo" width="280" style="margin: 20px 0;"/>
 
 <br>
 
@@ -81,42 +81,42 @@
 ### 🌅 **HOME - MODO LUMINOSO**
 *Diseño que respira elegancia y modernidad*
 
-<img src="assets/home-light.png" alt="Página Principal - Modo Claro" width="85%" style="border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin: 15px 0;"/>
+![Home Light Mode](https://fabystudios.github.io/Rodados/assets/home-light.png)
 
 ---
 
 ### 🌙 **PRODUCTOS - MODO NOCTURNO**  
 *Glassmorphism que hipnotiza con su belleza translúcida*
 
-<img src="assets/products-dark.png" alt="Catálogo Productos - Modo Oscuro" width="85%" style="border-radius: 15px; box-shadow: 0 20px 40px rgba(187, 134, 252, 0.3); margin: 15px 0;"/>
+![Products Dark Mode](https://fabystudios.github.io/Rodados/assets/products-dark.png)
 
 ---
 
 ### 🛒 **CARRITO PREMIUM**
 *Experiencia de compra que convierte visitantes en clientes*
 
-<img src="assets/cart-open4.png" alt="Carrito de Compras Premium" width="25%" style="border-radius: 15px; box-shadow: 0 20px 40px rgba(76, 175, 80, 0.3); margin: 15px 0;"/>
+![Shopping Cart Premium](https://fabystudios.github.io/Rodados/assets/cart-open4.png)
 
 ---
 
 ### 📱 **NAVEGACIÓN ATÓMICA**
 *Bottom Navigation con posicionamiento matemático perfecto*
 
-<img src="assets/mobile-nav.png" alt="Navegación Móvil Atómica" width="25%" style="border-radius: 15px; box-shadow: 0 20px 40px rgba(25, 118, 210, 0.3); margin: 15px 0;"/>
+![Mobile Navigation](https://fabystudios.github.io/Rodados/assets/mobile-nav.png)
 
 ---
 
 ### 👥 **PÁGINA NOSOTROS** 
 *Storytelling visual que conecta con el alma*
 
-<img src="assets/about-page.png" alt="Página Nosotros - Glassmorphism" width="85%" style="border-radius: 15px; box-shadow: 0 20px 40px rgba(156, 39, 176, 0.3); margin: 15px 0;"/>
+![About Page](https://fabystudios.github.io/Rodados/assets/about-page.png)
 
 ---
 
 ### 🎨 **THEME MAGIC**
 *La magia del cambio de tema en acción*
 
-<img src="assets/theme-demo.gif" alt="Demo Cambio de Tema" width="70%" style="border-radius: 15px; box-shadow: 0 20px 40px rgba(255, 152, 0, 0.3); margin: 15px 0;"/>
+![Theme Demo](https://fabystudios.github.io/Rodados/assets/theme-demo.gif)
 
 </div>
 
