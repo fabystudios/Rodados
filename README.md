@@ -5,7 +5,7 @@
 
 <br>
 
-<img src="assets/logo-ppal.png" alt="Rodados eShop - Logo Premium" width="280" style="margin: 20px 0;"/>
+<img src="assets/logo-ppal.png" alt="Rodados eShop - Logo Premium" width="200" style="margin: 20px 0;"/>
 
 <br>
 
