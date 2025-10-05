@@ -40,7 +40,7 @@ export default function Footer() {
         <FooterContainer component="footer">
             <FooterContent sx={{ gap: 1 }}>
                  <img
-                src="/Rodados/assets/image-5.png"
+                src="/assets/image-5.png"
                 alt="Brand"
                 style={{
                     height: 80,
