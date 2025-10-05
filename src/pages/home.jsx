@@ -72,9 +72,12 @@ export default function Home({ onAddToCart, cartItems = [] }) {
     }}>
       {/* Hero Section */}
       <Container maxWidth="xl" sx={{ pt: { xs: 4, md: 8 }, pb: 6 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+        <Grid container spacing={{ xs: 2, md: 4 }} alignItems="center">
+          <Grid item xs={12} md={6} lg={6}>
+            <Box sx={{ 
+              textAlign: { xs: 'center', md: 'left' },
+              pr: { md: 2, lg: 3 } // Padding right para dar espacio en pantallas medianas
+            }}>
               <Chip 
                 label="🎉 ¡Ofertas Especiales!"
                 sx={{ 
@@ -88,7 +91,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               <Typography 
                 variant="h2" 
                 sx={{ 
-                  fontSize: { xs: '2rem', md: '3.5rem' },
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
                   fontWeight: 'bold',
                   background: theme.palette.mode === 'dark'
                     ? 'linear-gradient(45deg, #bb86fc, #7c4dff, #6200ea)'
@@ -96,7 +99,8 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  mb: 2
+                  mb: 2,
+                  lineHeight: 1.2
                 }}
               >
                 Rodados eShop
@@ -106,7 +110,8 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 sx={{ 
                   color: theme.palette.mode === 'dark' ? '#e0e0e0' : '#424242',
                   mb: 3,
-                  fontSize: { xs: '1.2rem', md: '1.5rem' }
+                  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem', lg: '1.5rem' },
+                  lineHeight: 1.3
                 }}
               >
                 Tu destino para los mejores rodados y accesorios
@@ -116,12 +121,13 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 sx={{ 
                   color: theme.palette.mode === 'dark' ? '#b0b0b0' : '#666',
                   mb: 4,
-                  fontSize: { xs: '1rem', md: '1.1rem' },
-                  lineHeight: 1.6
+                  fontSize: { xs: '0.95rem', sm: '1rem', md: '1rem', lg: '1.1rem' },
+                  lineHeight: 1.5,
+                  maxWidth: { md: '90%', lg: '100%' } // Limitar ancho en pantallas medianas
                 }}
               >
-                Descubre nuestra amplia selección de productos de alta calidad, 
-                con los mejores precios y la atención que te mereces.
+                Descubre la experiencia premium que te mereces.
+                Productos de calidad con la mejor atención.
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
                 <Button
@@ -174,22 +180,34 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               </Stack>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} lg={6}>
             <Box sx={{ 
               textAlign: 'center',
-              position: 'relative'
+              position: 'relative',
+              pl: { md: 1, lg: 2 }, // Padding left para equilibrar en pantallas medianas
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              minHeight: { md: '400px' } // Altura mínima para mantener proporción
             }}>
               <Box sx={{
                 position: 'relative',
                 display: 'inline-block',
                 animation: 'float 3s ease-in-out infinite'
               }}>
-                <img
+                <Box
+                  component="img"
                   src="/Rodados/images/mascota2.png"
                   alt="Mascota Rodados"
-                  style={{
+                  sx={{
                     width: "100%",
-                    maxWidth: 350,
+                    maxWidth: { 
+                      xs: 300, 
+                      sm: 320, 
+                      md: 280, 
+                      lg: 330, 
+                      xl: 350 
+                    },
                     height: "auto",
                     filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))'
                   }}
