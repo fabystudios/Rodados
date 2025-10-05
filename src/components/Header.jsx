@@ -20,6 +20,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import logoPpal from "../assets/logo-ppal.png";
+import textoMarca from "../assets/texto-marca.png";
 
 export default function Header({ onCartClick, cartItems = [] }) {
   const theme = useTheme();
@@ -84,7 +86,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
 
         <Box
           component="img"
-          src="/Rodados/assets/logo-ppal.png"
+          src={logoPpal}
           alt="MiTienda Logo"
           sx={{ 
             height: 65,
@@ -229,7 +231,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
           >
             <Box
               component="img"
-              src="/Rodados/assets/logo-ppal.png"
+              src={logoPpal}
               alt="MiTienda Logo"
               sx={{ height: { xs: 50, sm: 80 } }}
             />
@@ -247,7 +249,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
           >
             <Box
               component="img"
-              src="/Rodados/assets/texto-marca.png"
+              src={textoMarca}
               alt="Marca"
               sx={{ height: { xs: 30, sm: 50 } }}
             />

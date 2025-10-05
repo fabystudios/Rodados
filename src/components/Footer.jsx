@@ -7,6 +7,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { styled } from "@mui/material/styles";
 import brandImage from "../assets/image-5.png";
+import mascotaModal from "../assets/images/mascota-modal.png";
 
 const FooterContainer = styled(Box)(({ theme }) => ({
     background: theme.palette.mode === 'dark'
@@ -53,7 +54,7 @@ export default function Footer() {
                 onMouseOut={e => (e.currentTarget.style.transform = "scale(1)")}
             />
                 {/* <Box sx={{ my: 0.2 }}>
-                    <Logo src="/images/mascota-modal.png" alt="Logo" style={{ width: "5%" }} />
+                    <Logo src={mascotaModal} alt="Logo" style={{ width: "5%" }} />
                 </Box> */}
                 <SocialIcons sx={{ mb: 0.2 }}>
                     <IconButton component="a" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" color="inherit" size="small">
