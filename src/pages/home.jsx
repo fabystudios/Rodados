@@ -203,7 +203,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               }}>
                 <Box
                   component="img"
-                  src="/Rodados/images/mascota2.png"
+                  src="/images/mascota2.png"
                   alt="Mascota Rodados"
                   sx={{
                     width: "100%",
@@ -319,7 +319,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 Cargando productos destacados...
               </Typography>
               <img
-                src="/Rodados/assets/spinner.png"
+                src="/assets/spinner.png"
                 alt="Cargando"
                 style={{ width: 100, height: "auto", opacity: 0.7 }}
               />

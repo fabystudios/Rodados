@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página no encontrada - Rodados eShop</title>
-    <link rel="icon" type="image/svg+xml" href="/Rodados/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
       * {
         margin: 0;
@@ -173,18 +173,8 @@
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       setTimeout(function() {
-        var pathSegmentsToKeep = 1;
-        var l = window.location;
-        if (l.pathname !== '/Rodados/' && l.pathname !== '/Rodados/404.html') {
-          l.replace(
-            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + 
-            '/?/' +
-            l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-            l.hash
-          );
-        }
+        // Redirigir al home en Vercel después de 3 segundos
+        window.location.href = '/';
       }, 3000);
     </script>
   </head>
@@ -204,8 +194,8 @@
       </p>
       
       <div class="buttons">
-        <a href="/Rodados/" class="btn">🏠 Ir al Inicio</a>
-        <a href="/Rodados/#/productos" class="btn btn-secondary">🛒 Ver Productos</a>
+        <a href="/" class="btn">🏠 Ir al Inicio</a>
+        <a href="/#/productos" class="btn btn-secondary">🛒 Ver Productos</a>
       </div>
       
       <div class="countdown">
