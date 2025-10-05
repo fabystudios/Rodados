@@ -21,6 +21,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import logoPpal from "../assets/logo-ppal.png";
+import logoBackup from "../assets/logo-backup.png";
 import textoMarca from "../assets/texto-marca.png";
 
 export default function Header({ onCartClick, cartItems = [] }) {
@@ -88,6 +89,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
           component="img"
           src={logoPpal}
           alt="MiTienda Logo"
+          onError={(e) => {e.target.src = logoBackup}}
           sx={{ 
             height: 65,
             filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.2))"
