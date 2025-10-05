@@ -1,67 +1,31 @@
-<!DOCTYPE html><!doctype html>
-
-<html lang="es"><html lang="es">
-
-<head>  <head>
-
-    <meta charset="UTF-8">    <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="icon" type="image/svg+xml" href="/Rodados/assets/logo-ppal.png" />
-
-    <title>Rodados eShop - GitHub Pages</title>    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <style>    <title>Rodados eShop - Tienda Virtual Premium</title>
-
-        body {    <meta name="description" content="Rodados eShop - La mejor experiencia de compra online con diseño glassmorphism y tecnología de vanguardia" />
-
-            font-family: Arial, sans-serif;    <meta name="author" content="Faby Studios" />
-
-            text-align: center;    
-
-            padding: 50px;    <!-- GitHub Pages SPA Redirect Script -->
-
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);    <script type="text/javascript">
-
-            color: white;      (function(l) {
-
-            min-height: 100vh;        if (l.search[1] === '/' ) {
-
-            margin: 0;          var decoded = l.search.slice(1).split('&').map(function(s) { 
-
-        }            return s.replace(/~and~/g, '&')
-
-        .container {          }).join('?');
-
-            background: rgba(255,255,255,0.1);          window.history.replaceState(null, null,
-
-            backdrop-filter: blur(10px);              l.pathname.slice(0, -1) + decoded + l.hash
-
-            border-radius: 20px;          );
-
-            padding: 50px;        }
-
-            max-width: 600px;      }(window.location))
-
-            margin: 0 auto;    </script>
-
-        }  </head>
-
-        h1 { margin-bottom: 30px; font-size: 2.5em; }  <body>
-
-        p { font-size: 1.2em; margin: 20px 0; }    <div id="root"></div>
-
-        .success { color: #4CAF50; font-weight: bold; }    <script type="module" src="/src/main.jsx"></script>
-
-    </style>  </body>
-
-</head></html>
-
-<body>
-    <div class="container">
-        <h1>🎉 ¡GitHub Pages Configurado!</h1>
-        <p class="success">✅ Rama gh-pages creada exitosamente</p>
-        <p>La aplicación React se desplegará automáticamente aquí cuando se ejecute el GitHub Action.</p>
-        <p><small>Configuración completada - Esperando deployment automático</small></p>
-    </div>
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Rodados/assets/logo-ppal.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rodados eShop - Tienda Virtual Premium</title>
+    <meta name="description" content="Rodados eShop - La mejor experiencia de compra online con diseño glassmorphism y tecnología de vanguardia" />
+    <meta name="author" content="Faby Studios" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- GitHub Pages SPA Redirect Script -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="module" crossorigin src="/Rodados/assets/index-iphZr0oX.js"></script>
+    <link rel="stylesheet" crossorigin href="/Rodados/assets/index-DjzxG8DD.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
