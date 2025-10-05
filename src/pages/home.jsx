@@ -72,11 +72,11 @@ export default function Home({ onAddToCart, cartItems = [] }) {
     }}>
       {/* Hero Section */}
       <Container maxWidth="xl" sx={{ pt: { xs: 4, md: 8 }, pb: 6 }}>
-        <Grid container spacing={{ xs: 2, md: 4 }} alignItems="center">
-          <Grid item xs={12} md={6} lg={6}>
+        <Grid container spacing={{ xs: 2, md: 3 }} alignItems="center">
+          <Grid item xs={12} md={7} lg={6}>
             <Box sx={{ 
               textAlign: { xs: 'center', md: 'left' },
-              pr: { md: 2, lg: 3 } // Padding right para dar espacio en pantallas medianas
+              maxWidth: { md: '480px', lg: '100%' } // Limitar ancho total del contenedor
             }}>
               <Chip 
                 label="🎉 ¡Ofertas Especiales!"
@@ -91,7 +91,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               <Typography 
                 variant="h2" 
                 sx={{ 
-                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '2.8rem', lg: '3.5rem' },
                   fontWeight: 'bold',
                   background: theme.palette.mode === 'dark'
                     ? 'linear-gradient(45deg, #bb86fc, #7c4dff, #6200ea)'
@@ -110,24 +110,22 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 sx={{ 
                   color: theme.palette.mode === 'dark' ? '#e0e0e0' : '#424242',
                   mb: 3,
-                  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.3rem', lg: '1.5rem' },
+                  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.25rem', lg: '1.5rem' },
                   lineHeight: 1.3
                 }}
               >
-                Tu destino para los mejores rodados y accesorios
+                Los mejores rodados y accesorios
               </Typography>
               <Typography 
                 variant="body1" 
                 sx={{ 
                   color: theme.palette.mode === 'dark' ? '#b0b0b0' : '#666',
                   mb: 4,
-                  fontSize: { xs: '0.95rem', sm: '1rem', md: '1rem', lg: '1.1rem' },
-                  lineHeight: 1.5,
-                  maxWidth: { md: '90%', lg: '100%' } // Limitar ancho en pantallas medianas
+                  fontSize: { xs: '0.95rem', sm: '1rem', md: '0.95rem', lg: '1.1rem' },
+                  lineHeight: 1.4
                 }}
               >
-                Descubre la experiencia premium que te mereces.
-                Productos de calidad con la mejor atención.
+                Calidad premium y atención personalizada.
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
                 <Button
@@ -180,15 +178,14 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               </Stack>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} lg={6}>
+          <Grid item xs={12} md={5} lg={6}>
             <Box sx={{ 
               textAlign: 'center',
               position: 'relative',
-              pl: { md: 1, lg: 2 }, // Padding left para equilibrar en pantallas medianas
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              minHeight: { md: '400px' } // Altura mínima para mantener proporción
+              minHeight: { md: '350px', lg: '400px' } // Altura mínima ajustada
             }}>
               <Box sx={{
                 position: 'relative',
@@ -202,10 +199,10 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                   sx={{
                     width: "100%",
                     maxWidth: { 
-                      xs: 300, 
-                      sm: 320, 
-                      md: 280, 
-                      lg: 330, 
+                      xs: 280, 
+                      sm: 300, 
+                      md: 240, 
+                      lg: 320, 
                       xl: 350 
                     },
                     height: "auto",
