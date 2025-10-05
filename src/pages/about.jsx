@@ -23,6 +23,8 @@ import mascotaImage from "../assets/images/mascota.png";
 import mascota2Image from "../assets/images/mascota2.png";
 import logotipoTop from "../assets/logotipo-top.png";
 import coniImage from "../assets/images/coni.png";
+import teamImage from "../assets/team.jpg";
+import officeImage from "../assets/office.jpg";
 
 export default function About() {
   const theme = useTheme();
@@ -254,7 +256,7 @@ export default function About() {
               <CardMedia
                 component="img"
                 height="300"
-                image="/Rodados/assets/team.jpg"
+                image={teamImage}
                 alt="Nuestro equipo"
                 sx={{
                   cursor: "pointer",
@@ -265,7 +267,7 @@ export default function About() {
                     filter: 'brightness(1.2) saturate(1.3)'
                   }
                 }}
-                onClick={() => handleImageClick("/Rodados/assets/team.jpg", "Nuestro equipo")}
+                onClick={() => handleImageClick(teamImage, "Nuestro equipo")}
               />
               
               <CardContent sx={{ p: 4 }}>
@@ -336,7 +338,7 @@ export default function About() {
               <CardMedia
                 component="img"
                 height="300"
-                image="/Rodados/assets/office.jpg"
+                image={officeImage}
                 alt="Nuestra tienda"
                 sx={{
                   cursor: "pointer",
@@ -347,7 +349,7 @@ export default function About() {
                     filter: 'brightness(1.2) saturate(1.3)'
                   }
                 }}
-                onClick={() => handleImageClick("/Rodados/assets/office.jpg", "Nuestra tienda")}
+                onClick={() => handleImageClick(officeImage, "Nuestra tienda")}
               />
               
               <CardContent sx={{ p: 4 }}>
