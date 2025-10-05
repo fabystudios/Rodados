@@ -14,6 +14,8 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import comprasImage from "../assets/compras.png";
+import carritoImage from "../assets/carrito.png";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -164,7 +166,7 @@ export default function Cart({
           </Box>
           <Box
             component="img"
-            src="/Rodados/assets/compras.png"
+            src={comprasImage}
             alt="Mascota"
             sx={{ 
               width: 80, 
@@ -197,7 +199,7 @@ export default function Cart({
             >
               <Box
                 component="img"
-                src="/Rodados/assets/carrito.png"
+                src={carritoImage}
                 alt="Carrito vacío"
                 sx={{
                   width: 120,

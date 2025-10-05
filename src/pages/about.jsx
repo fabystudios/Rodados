@@ -19,6 +19,10 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 import GroupIcon from "@mui/icons-material/Group";
 import StorefrontIcon from "@mui/icons-material/Storefront";
+import mascotaImage from "../assets/images/mascota.png";
+import mascota2Image from "../assets/images/mascota2.png";
+import logotipoTop from "../assets/logotipo-top.png";
+import coniImage from "../assets/images/coni.png";
 
 export default function About() {
   const theme = useTheme();
@@ -59,7 +63,7 @@ export default function About() {
             display: { xs: 'none', md: 'block' }
           }}>
             <img
-              src="/Rodados/images/mascota.png"
+              src={mascotaImage}
               alt="Mascota 1"
               style={{
                 width: 120,
@@ -80,7 +84,7 @@ export default function About() {
             display: { xs: 'none', md: 'block' }
           }}>
             <img
-              src="/Rodados/images/mascota2.png"
+              src={mascota2Image}
               alt="Mascota 2"
               style={{
                 width: 100,
@@ -94,7 +98,7 @@ export default function About() {
           {/* Logo Principal */}
           <Box sx={{ mb: 4, position: 'relative', zIndex: 3 }}>
             <img
-              src="/Rodados/assets/logotipo-top.png"
+              src={logotipoTop}
               alt="Rodados eShop"
               style={{
                 width: '100%',
@@ -376,7 +380,7 @@ export default function About() {
           display: { xs: 'block', md: 'none' }
         }}>
           <img
-            src="/Rodados/images/coni.png"
+            src={coniImage}
             alt="Mascota Coni"
             style={{
               width: 150,
