@@ -72,11 +72,11 @@ export default function Home({ onAddToCart, cartItems = [] }) {
     }}>
       {/* Hero Section */}
       <Container maxWidth="xl" sx={{ pt: { xs: 4, md: 8 }, pb: 6 }}>
-        <Grid container spacing={{ xs: 2, md: 4 }} alignItems="center" sx={{ minHeight: { md: '500px' } }}>
+        <Grid container spacing={{ xs: 2, md: 2 }} alignItems="center" sx={{ minHeight: { md: '500px' } }}>
           <Grid item xs={12} md={6}>
             <Box sx={{ 
               textAlign: { xs: 'center', md: 'left' },
-              pr: { md: 3 }, // Padding derecho para separar del conejito
+              pr: { md: 1 }, // Menos padding derecho para acercar al conejito
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -191,10 +191,10 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               textAlign: 'center',
               position: 'relative',
               display: 'flex',
-              justifyContent: { xs: 'center', md: 'flex-start' },
+              justifyContent: 'center',
               alignItems: 'center',
               height: '100%',
-              pl: { md: 2 } // Padding izquierdo para acercarlo al texto
+              px: { md: 3 } // Padding horizontal para centrarlo mejor en su espacio
             }}>
               <Box sx={{
                 position: 'relative',
@@ -210,9 +210,9 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                     maxWidth: { 
                       xs: 280, 
                       sm: 320, 
-                      md: 320, 
-                      lg: 360, 
-                      xl: 380 
+                      md: 350, 
+                      lg: 400, 
+                      xl: 420 
                     },
                     height: "auto",
                     filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))'
