@@ -6,6 +6,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { styled } from "@mui/material/styles";
+import brandImage from "../assets/image-5.png";
 
 const FooterContainer = styled(Box)(({ theme }) => ({
     background: theme.palette.mode === 'dark'
@@ -40,7 +41,7 @@ export default function Footer() {
         <FooterContainer component="footer">
             <FooterContent sx={{ gap: 1 }}>
                  <img
-                src="/assets/image-5.png"
+                src={brandImage}
                 alt="Brand"
                 style={{
                     height: 80,

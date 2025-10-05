@@ -17,6 +17,7 @@ import { styled } from "@mui/material/styles";
 import "../styles/ProductList.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import spinnerImage from "../assets/spinner.png";
 
 // Estilos MD3 para Card y Button - Glassmorphism como Home
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -76,7 +77,7 @@ export default function ProductList({ onAddToCart, cartItems = [] }) {
             Cargando productos...
           </Typography>
           <img
-            src="/assets/spinner.png"
+            src={spinnerImage}
             alt="Cargando"
             style={{ width: 150,  display: "inline-block" }}
           />

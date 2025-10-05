@@ -19,6 +19,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import SecurityIcon from "@mui/icons-material/Security";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import mascotaImage from "../assets/images/mascota2.png";
+import spinnerImage from "../assets/spinner.png";
 import StarIcon from "@mui/icons-material/Star";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
@@ -203,7 +205,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               }}>
                 <Box
                   component="img"
-                  src="/images/mascota2.png"
+                  src={mascotaImage}
                   alt="Mascota Rodados"
                   sx={{
                     width: "100%",
@@ -319,7 +321,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 Cargando productos destacados...
               </Typography>
               <img
-                src="/assets/spinner.png"
+                src={spinnerImage}
                 alt="Cargando"
                 style={{ width: 100, height: "auto", opacity: 0.7 }}
               />
