@@ -32,8 +32,8 @@ export default function BottomNavigation({ onCartClick, cartItems = [] }) {
 
 
 
-  // Calcular total de items en el carrito
-  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  // Calcular número de productos únicos en el carrito
+  const cartItemCount = cartItems.length;
 
   return (
     <Paper
