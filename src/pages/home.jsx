@@ -72,11 +72,15 @@ export default function Home({ onAddToCart, cartItems = [] }) {
     }}>
       {/* Hero Section */}
       <Container maxWidth="xl" sx={{ pt: { xs: 4, md: 8 }, pb: 6 }}>
-        <Grid container spacing={{ xs: 2, md: 3 }} alignItems="center">
-          <Grid item xs={12} md={7} lg={6}>
+        <Grid container spacing={{ xs: 2, md: 4 }} alignItems="center" sx={{ minHeight: { md: '500px' } }}>
+          <Grid item xs={12} md={6}>
             <Box sx={{ 
               textAlign: { xs: 'center', md: 'left' },
-              maxWidth: { md: '480px', lg: '100%' } // Limitar ancho total del contenedor
+              pr: { md: 3 }, // Padding derecho para separar del conejito
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              height: '100%'
             }}>
               <Chip 
                 label="🎉 ¡Ofertas Especiales!"
@@ -85,13 +89,14 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                   background: 'linear-gradient(45deg, #4CAF50, #81C784)',
                   color: 'white',
                   fontWeight: 'bold',
-                  animation: 'pulse 2s infinite'
+                  animation: 'pulse 2s infinite',
+                  alignSelf: { xs: 'center', md: 'flex-start' }
                 }}
               />
               <Typography 
                 variant="h2" 
                 sx={{ 
-                  fontSize: { xs: '2rem', sm: '2.5rem', md: '2.8rem', lg: '3.5rem' },
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '2.5rem', lg: '3.5rem' },
                   fontWeight: 'bold',
                   background: theme.palette.mode === 'dark'
                     ? 'linear-gradient(45deg, #bb86fc, #7c4dff, #6200ea)'
@@ -100,7 +105,7 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   mb: 2,
-                  lineHeight: 1.2
+                  lineHeight: 1.1
                 }}
               >
                 Rodados eShop
@@ -110,22 +115,25 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                 sx={{ 
                   color: theme.palette.mode === 'dark' ? '#e0e0e0' : '#424242',
                   mb: 3,
-                  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.25rem', lg: '1.5rem' },
-                  lineHeight: 1.3
+                  fontSize: { xs: '1.1rem', sm: '1.2rem', md: '1.1rem', lg: '1.4rem' },
+                  lineHeight: 1.2,
+                  fontWeight: 500
                 }}
               >
-                Los mejores rodados y accesorios
+                Tu destino premium
+                <br />
+                para rodados y accesorios
               </Typography>
               <Typography 
                 variant="body1" 
                 sx={{ 
                   color: theme.palette.mode === 'dark' ? '#b0b0b0' : '#666',
                   mb: 4,
-                  fontSize: { xs: '0.95rem', sm: '1rem', md: '0.95rem', lg: '1.1rem' },
-                  lineHeight: 1.4
+                  fontSize: { xs: '0.95rem', sm: '1rem', md: '0.9rem', lg: '1rem' },
+                  lineHeight: 1.3
                 }}
               >
-                Calidad premium y atención personalizada.
+                Calidad excepcional y servicio personalizado.
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
                 <Button
@@ -178,14 +186,15 @@ export default function Home({ onAddToCart, cartItems = [] }) {
               </Stack>
             </Box>
           </Grid>
-          <Grid item xs={12} md={5} lg={6}>
+          <Grid item xs={12} md={6}>
             <Box sx={{ 
               textAlign: 'center',
               position: 'relative',
               display: 'flex',
-              justifyContent: 'center',
+              justifyContent: { xs: 'center', md: 'flex-start' },
               alignItems: 'center',
-              minHeight: { md: '350px', lg: '400px' } // Altura mínima ajustada
+              height: '100%',
+              pl: { md: 2 } // Padding izquierdo para acercarlo al texto
             }}>
               <Box sx={{
                 position: 'relative',
@@ -200,10 +209,10 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                     width: "100%",
                     maxWidth: { 
                       xs: 280, 
-                      sm: 300, 
-                      md: 240, 
-                      lg: 320, 
-                      xl: 350 
+                      sm: 320, 
+                      md: 320, 
+                      lg: 360, 
+                      xl: 380 
                     },
                     height: "auto",
                     filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))'
