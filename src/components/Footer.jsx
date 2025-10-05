@@ -6,7 +6,6 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { styled } from "@mui/material/styles";
-import "../styles/footer.css";
 
 const FooterContainer = styled(Box)(({ theme }) => ({
     background: theme.palette.mode === 'dark'
