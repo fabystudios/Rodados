@@ -2,6 +2,7 @@
 
 # 🚲✨ **RODADOS eSHOP** ✨🚲
 ### *La Revolución del eCommerce con Glassmorphism*
+> 🎉 **¡Ahora disponible en GitHub Pages!**
 
 <br>
 
