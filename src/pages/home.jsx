@@ -326,7 +326,10 @@ export default function Home({ onAddToCart, cartItems = [] }) {
             </Box>
           ) : (
             featuredProducts.map((product) => (
-              <Grid item xs={12} sm={6} md={4} key={product.id} sx={{ display: 'flex' }}>
+              <Grid item xs={12} sm={6} md={4} key={product.id} sx={{ 
+                display: 'flex', 
+                justifyContent: 'center' 
+              }}>
                 <Badge
                   badgeContent={getCartQuantity(product.id)}
                   sx={{
@@ -350,8 +353,9 @@ export default function Home({ onAddToCart, cartItems = [] }) {
                   }}
                 >
                   <Card sx={{
-                    width: '100%',
-                    maxWidth: 300,
+                    width: { xs: '280px', sm: '260px', md: '280px' },
+                    minWidth: { xs: '280px', sm: '260px', md: '280px' },
+                    maxWidth: { xs: '280px', sm: '260px', md: '280px' },
                     background: theme.palette.mode === 'dark' 
                       ? 'rgba(30, 30, 30, 0.95)' 
                       : 'rgba(255, 255, 255, 0.95)',
