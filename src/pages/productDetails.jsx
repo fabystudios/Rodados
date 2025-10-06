@@ -211,7 +211,7 @@ export default function ProductDetail({
                 lineHeight: 1.6
               }}
             >
-              {product.description || "Este producto no tiene descripción disponible."}
+              {product.descripcion || "Este producto no tiene descripción disponible."}
             </Typography>
 
           <Box sx={{ mt: 4 }}>
