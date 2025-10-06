@@ -172,10 +172,23 @@
     <!-- SPA Redirect Script (mantener funcionalidad) -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
-      setTimeout(function() {
-        // Redirigir al home en Vercel después de 3 segundos
-        window.location.href = '/';
-      }, 3000);
+      let redirectTimer;
+      let userInteracted = false;
+      
+      // Detectar interacción del usuario para cancelar redirección
+      document.addEventListener('click', () => { userInteracted = true; });
+      document.addEventListener('keypress', () => { userInteracted = true; });
+      
+      redirectTimer = setTimeout(function() {
+        if (!userInteracted) {
+          // Mejor detección de entorno y redirección inteligente
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            window.location.href = '/#/';
+          } else {
+            window.location.href = '/';
+          }
+        }
+      }, 8000); // Aumentado a 8 segundos
     </script>
   </head>
   <body>
@@ -199,23 +212,40 @@
       </div>
       
       <div class="countdown">
-        <p id="redirect-text">Redirigiendo automáticamente en <span id="countdown">3</span> segundos...</p>
+        <p id="redirect-text">Redirigiendo automáticamente en <span id="countdown">8</span> segundos...</p>
       </div>
     </div>
     
     <script>
-      // Countdown para redirección
-      let count = 3;
+      // Countdown para redirección con detección de interacción
+      let count = 8;
       const countdownElement = document.getElementById('countdown');
       const redirectText = document.getElementById('redirect-text');
+      let countdownTimer;
       
-      const timer = setInterval(() => {
+      // Función para cancelar redirección automática
+      function cancelAutoRedirect() {
+        if (countdownTimer) {
+          clearInterval(countdownTimer);
+          redirectText.innerHTML = '⏸️ Redirección cancelada - Navega cuando quieras';
+          redirectText.style.opacity = '0.6';
+        }
+        if (window.redirectTimer) {
+          clearTimeout(window.redirectTimer);
+        }
+      }
+      
+      // Cancelar redirección si el usuario interactúa
+      document.addEventListener('click', cancelAutoRedirect);
+      document.addEventListener('keypress', cancelAutoRedirect);
+      
+      countdownTimer = setInterval(() => {
         count--;
         countdownElement.textContent = count;
         
         if (count <= 0) {
-          clearInterval(timer);
-          redirectText.innerHTML = '¡Redirigiendo ahora...!';
+          clearInterval(countdownTimer);
+          redirectText.innerHTML = '🚀 ¡Redirigiendo ahora...!';
         }
       }, 1000);
     </script>
