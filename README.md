@@ -760,7 +760,7 @@ git push origin feature/mi-idea-genial
 
 <br>
 
-<img src="https://avatars.githubusercontent.com/u/198817537?v=4" alt="Guillermo Escobar" width="150" style="border-radius: 50%; border: 4px solid #4CAF50; box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);"/>
+<img src="https://avatars.githubusercontent.com/u/90744366?v=4" alt="Guillermo Escobar" width="150" style="border-radius: 50%; border: 4px solid #4CAF50; box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);"/>
 
 <br>
 
@@ -775,11 +775,11 @@ git push origin feature/mi-idea-genial
 <br>
 
 **🎯 Especialidades:**
-- ⚛️ React Ecosystem Master
-- 🎨 UI/UX Design Passionate  
-- 📱 Mobile-First Advocate
-- 🌟 Performance Optimization Guru
-- 🎭 Animation & Micro-interactions Expert
+⚛️ React Ecosystem Master
+🎨 UI/UX Design Passionate  
+📱 Mobile-First Advocate
+🌟 Performance Optimization Guru
+🎭 Animation & Micro-interactions Expert
 
 <br>
 
