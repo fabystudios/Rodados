@@ -6,7 +6,7 @@
 
 <br>
 
-  <img src="https://fabystudios.github.io/Rodados/assets/logo-ppal.png" alt="Rodados eShop Logo" width="280" style="margin: 20px 0;"/>
+  <img src="https://fabystudios.github.io/Rodados/assets/logo-ppal.png" alt="Rodados eShop Logo" width="150" style="margin: 20px 0;"/>
 
 <br>
 
@@ -119,6 +119,20 @@
 
 ![Theme Demo](https://fabystudios.github.io/Rodados/assets/theme-demo.gif)
 
+---
+
+### 🚫 **PÁGINA 404 PERSONALIZADA**
+*Error page que convierte errores en experiencias memorable*
+
+![404 Custom Page](https://rodados-eshop-beta.vercel.app/assets/404-page.png)
+
+---
+
+### 📱 **SOCIAL MEDIA PREVIEW**
+*Meta tags optimizados para WhatsApp, Facebook y Twitter*
+
+![Social Preview Demo](https://rodados-eshop-beta.vercel.app/assets/social-preview.png)
+
 </div>
 
 ---
@@ -180,6 +194,128 @@
 - 🔄 **Smooth Transitions**: Animaciones que enamoran
 - 📐 **Pixel Perfect**: Cada elemento en su lugar exacto
 - ⚡ **Performance**: 60 FPS garantizados
+
+---
+
+## 🚫 **PÁGINA 404 PERSONALIZADA**
+
+<div align="center">
+
+### 🎨 **Error Page que Encanta**
+
+![Página 404 Personalizada](https://rodados-eshop-beta.vercel.app/assets/404-screenshot.png)
+
+</div>
+
+Convertimos los errores 404 en experiencias memorables con nuestra página de error personalizada:
+
+### ✨ **Características de la Página 404:**
+
+| Feature | Descripción | Tecnología |
+|:---|:---|:---:|
+| 🎨 **Glassmorphism Design** | Diseño consistente con la app | `backdrop-filter` + CSS |
+| 🖼️ **Imagen Personalizada** | Mascota de marca con animaciones | Imports + Animations |
+| 🔄 **Auto-redirect** | Redirección automática en 3 segundos | JavaScript Timer |
+| 🎯 **Navegación Manual** | Botones para ir a Home y Productos | React Router Links |
+| 📱 **Responsive** | Adaptable a todos los dispositivos | Mobile-First Design |
+| 🌈 **Themed** | Se adapta al modo oscuro/claro | Theme Context |
+
+### 🎭 **Experiencia del Usuario:**
+
+```javascript
+// 🎯 Funcionalidad de la página 404
+const Custom404Features = {
+  visualFeedback: "Imagen animada + gradientes dinámicos",
+  autoRedirect: "3 segundos con countdown visual",
+  manualNavigation: "Botones estilizados para navegación inmediata", 
+  errorTracking: "Registra URLs no encontradas",
+  brandingConsistency: "Mantiene identidad visual de la app"
+}
+```
+
+<div align="center">
+
+### 🎨 **Elementos Visuales**
+
+</div>
+
+- 🎪 **Animaciones CSS**: Float, bounce y gradient animados
+- 🖼️ **Imagen de marca**: Logo/mascota con drop-shadow
+- 🌈 **Gradiente de fondo**: Colores que combinan con el tema
+- ⏱️ **Countdown visual**: Timer que informa al usuario
+- 🎯 **CTA Buttons**: Botones con hover effects llamativos
+
+---
+
+## 📱 **META TAGS & SOCIAL PREVIEW**
+
+<div align="center">
+
+### 🌐 **Optimización para Redes Sociales**
+
+</div>
+
+Implementamos meta tags Open Graph completos para previews perfectos en WhatsApp, Facebook, Telegram y Twitter:
+
+### 🎯 **Meta Tags Implementados:**
+
+| Plataforma | Meta Tags | Resultado |
+|:---|:---|:---:|
+| 📱 **WhatsApp** | `og:image`, `og:title`, `og:description` | ✅ Preview completo |
+| 📘 **Facebook** | Open Graph completo + `og:url` | ✅ Rich preview |
+| 🐦 **Twitter** | Twitter Cards + `twitter:image` | ✅ Card expandida |
+| 💬 **Telegram** | Open Graph compatible | ✅ Preview automático |
+| 🔗 **LinkedIn** | Profesional sharing ready | ✅ Business ready |
+
+### 🔧 **Configuración Técnica:**
+
+```html
+<!-- 🎯 Open Graph Meta Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rodados-eshop-beta.vercel.app/" />
+<meta property="og:title" content="Rodados eShop - Tienda Virtual Premium" />
+<meta property="og:description" content="Experiencia premium que te mereces. Productos de calidad con la mejor atención." />
+<meta property="og:image" content="https://rodados-eshop-beta.vercel.app/assets/logo-conejin.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Rodados eShop" />
+
+<!-- 🐦 Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://rodados-eshop-beta.vercel.app/assets/logo-conejin.png" />
+```
+
+### 📊 **Especificaciones de Imagen:**
+
+| Aspecto | Especificación | Optimización |
+|:---|:---|:---:|
+| 📏 **Dimensiones** | 1200x630px (Facebook estándar) | ✅ Ratio 1.91:1 |
+| 📦 **Tamaño** | < 300KB (WhatsApp límite) | ✅ 260KB actual |
+| 🖼️ **Formato** | PNG con transparencia | ✅ Alta calidad |
+| 🌐 **URL** | Absoluta con HTTPS | ✅ CDN optimizado |
+| 🎨 **Contenido** | Logo + branding visible | ✅ Reconocible |
+
+### 🧪 **Testing & Validation:**
+
+```bash
+# 🔍 Herramientas de debugging para meta tags
+📘 Facebook Debugger: https://developers.facebook.com/tools/debug/
+🐦 Twitter Validator: https://cards-dev.twitter.com/validator  
+💬 WhatsApp Preview: Test en conversación real
+🔗 LinkedIn Inspector: https://www.linkedin.com/post-inspector/
+```
+
+<div align="center">
+
+### ✨ **Resultado Final**
+
+</div>
+
+- 🎯 **Preview instantáneo** al compartir enlaces
+- 📱 **Imagen llamativa** que genera clicks
+- 📝 **Descripción optimizada** para conversión
+- 🎨 **Branding consistente** en todas las plataformas
+- 🚀 **Engagement mejorado** en redes sociales
 
 ---
 
