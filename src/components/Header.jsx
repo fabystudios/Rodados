@@ -95,7 +95,19 @@ export default function Header({ onCartClick, cartItems = [] }) {
           onError={(e) => {e.target.src = logoBackup}}
           sx={{ 
             height: 65,
-            filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.2))"
+            filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.2))",
+            transition: "transform 0.4s",
+            cursor: "pointer",
+            "&:hover": {
+              animation: "swingMobile 0.7s",
+            },
+            "@keyframes swingMobile": {
+              "20%": { transform: "rotate(15deg)" },
+              "40%": { transform: "rotate(-10deg)" },
+              "60%": { transform: "rotate(5deg)" },
+              "80%": { transform: "rotate(-5deg)" },
+              "100%": { transform: "rotate(0deg)" },
+            },
           }}
         />
       </Box>
