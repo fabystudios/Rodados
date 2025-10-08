@@ -28,6 +28,9 @@ export default function Header({ onCartClick, cartItems = [] }) {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation(); // 👈 detecta ruta activa
+  
+  // Calcular total de unidades en el carrito (como MercadoLibre)
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -282,7 +285,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
 
             {/* Carrito (icono siempre visible en desktop) */}
             <Badge
-              badgeContent={cartItems.length}
+              badgeContent={cartItemCount}
               sx={{
                 "& .MuiBadge-badge": {
                   background: "linear-gradient(45deg, #ff1744, #d50000)",
@@ -294,7 +297,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
                   borderRadius: "10px",
                   border: "2px solid white",
                   boxShadow: "0 2px 6px rgba(255, 23, 68, 0.4)",
-                  animation: cartItems.length > 0 ? "cartPulse 2s infinite" : "none",
+                  animation: cartItemCount > 0 ? "cartPulse 2s infinite" : "none",
                   "@keyframes cartPulse": {
                     "0%": { transform: "scale(1)" },
                     "50%": { transform: "scale(1.15)" },
@@ -313,7 +316,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
           <Box sx={{ display: { xs: "flex", sm: "none" }, gap: 1 }}>
             {/* Carrito móvil - siempre visible */}
             <Badge
-              badgeContent={cartItems.length}
+              badgeContent={cartItemCount}
               sx={{
                 "& .MuiBadge-badge": {
                   background: "linear-gradient(45deg, #ff1744, #d50000)",
@@ -325,7 +328,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
                   borderRadius: "9px",
                   border: "2px solid white",
                   boxShadow: "0 2px 6px rgba(255, 23, 68, 0.4)",
-                  animation: cartItems.length > 0 ? "cartPulseMobile 2s infinite" : "none",
+                  animation: cartItemCount > 0 ? "cartPulseMobile 2s infinite" : "none",
                   "@keyframes cartPulseMobile": {
                     "0%": { transform: "scale(1)" },
                     "50%": { transform: "scale(1.2)" },

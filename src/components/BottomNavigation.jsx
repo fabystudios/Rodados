@@ -32,8 +32,8 @@ export default function BottomNavigation({ onCartClick, cartItems = [] }) {
 
 
 
-  // Calcular cantidad de productos diferentes (igual que en Header)
-  const cartItemCount = cartItems.length;
+  // Calcular total de unidades en el carrito (como MercadoLibre)
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <Paper
