@@ -1,20 +1,8 @@
 {
-  "git": {
-    "deploymentEnabled": {
-      "main": true,
-      "dev": true
-    }
-  },
   "rewrites": [
     {
-      "source": "/((?!api/.*)(?!_next/.*)(?!favicon.ico)(?!vite.svg)(?!.*\\.).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
     }
   ]
 }
