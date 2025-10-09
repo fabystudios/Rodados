@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ScrollToTop } from "./hooks/useScrollToTop";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -74,6 +75,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <Box display="flex" flexDirection="column" minHeight="100vh">
           {/* 🔹 Header fijo en todas las páginas */}
           <Header onCartClick={() => setCartOpen(true)} cartItems={cartItems} />
