@@ -106,7 +106,21 @@ export default function App() {
             />
 
             <Route
-              path="/productos/:id"
+              path="/productos/:categoria"
+              element={
+                <Products
+                  cartItems={cartItems}
+                  addToCart={addToCart}
+                  increaseQty={increaseQty}
+                  decreaseQty={decreaseQty}
+                  removeItem={removeItem}
+                  clearCart={clearCart}
+                />
+              }
+            />
+
+            <Route
+              path="/productos/:categoria/:id"
               element={
                 <ProductDetail
                   cartItems={cartItems}
