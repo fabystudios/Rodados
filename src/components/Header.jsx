@@ -374,19 +374,40 @@ export default function Header({ onCartClick, cartItems = [] }) {
 
           {/* Menú móvil */}
           <Box sx={{ display: { xs: "flex", sm: "none" }, gap: 1 }}>
-            {/* Indicador de usuario móvil - reemplaza al carrito */}
+            {/* Indicador de usuario móvil - con funcionalidad logout */}
             <IconButton 
               color="inherit"
+              onClick={isAuthenticated() ? logout : undefined}
               sx={{
                 color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.4)',
                 transition: 'all 0.3s ease',
+                cursor: isAuthenticated() ? 'pointer' : 'default',
+                position: 'relative',
+                // Indicador visual de que es clickeable cuando está logueado
+                '&::after': isAuthenticated() ? {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: 2,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '4px',
+                  height: '4px',
+                  borderRadius: '50%',
+                  backgroundColor: '#4CAF50',
+                  animation: 'blink 2s infinite'
+                } : {},
+                '@keyframes blink': {
+                  '0%': { opacity: 1 },
+                  '50%': { opacity: 0.4 },
+                  '100%': { opacity: 1 }
+                },
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  transform: 'scale(1.1)',
+                  backgroundColor: isAuthenticated() ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+                  transform: isAuthenticated() ? 'scale(1.1)' : 'none',
                   color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.7)'
                 }
               }}
-              title={isAuthenticated() ? `Logueado como ${user.username}` : 'No logueado'}
+              title={isAuthenticated() ? `Cerrar sesión (${user.username})` : 'No logueado'}
             >
               <PersonIcon />
             </IconButton>
