@@ -15,6 +15,7 @@ import Home from "./pages/home";
 import Products from "./pages/products";       
 import ProductDetail from "./pages/productDetails"; 
 import About from "./pages/about";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
@@ -136,6 +137,9 @@ export default function App() {
             />
 
             <Route path="/nosotros" element={<About />} />
+            
+            {/* 🔹 Ruta catch-all para páginas no encontradas */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>
 

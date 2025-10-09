@@ -7,8 +7,14 @@
   },
   "rewrites": [
     {
-      "source": "/((?!api/.*)(?!_next/.*)(?!favicon.ico)(?!.*\\.).*)",
+      "source": "/((?!api/.*)(?!_next/.*)(?!favicon.ico)(?!vite.svg)(?!.*\\.).*)",
       "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
