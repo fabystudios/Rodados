@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { AuthProvider } from "./contexts/AuthContext";
 import { ScrollToTop } from "./hooks/useScrollToTop";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Cart from "./components/Cart";
+import CartWithAuth from "./components/CartWithAuth";
 import BottomNavigation from "./components/BottomNavigation";
 
 // Pages
@@ -75,9 +76,10 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <Router>
-        <ScrollToTop />
-        <Box display="flex" flexDirection="column" minHeight="100vh">
+      <AuthProvider>
+        <Router>
+          <ScrollToTop />
+          <Box display="flex" flexDirection="column" minHeight="100vh">
           {/* 🔹 Header fijo en todas las páginas */}
           <Header onCartClick={() => setCartOpen(true)} cartItems={cartItems} />
 
@@ -154,8 +156,8 @@ export default function App() {
           cartItems={cartItems}
         />
 
-        {/* 🔹 Drawer del carrito */}
-        <Cart
+        {/* 🔹 Drawer del carrito con autenticación */}
+        <CartWithAuth
           open={cartOpen}
           onClose={() => setCartOpen(false)}
           items={cartItems}
@@ -172,6 +174,7 @@ export default function App() {
         }} />
         </Box>
       </Router>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

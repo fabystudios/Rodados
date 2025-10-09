@@ -20,12 +20,16 @@ import HomeIcon from "@mui/icons-material/Home";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import { useAuth } from "../contexts/AuthContext";
+import PersonIcon from "@mui/icons-material/Person";
+import LogoutIcon from "@mui/icons-material/Logout";
 import logoPpal from "../assets/logo-ppal.png";
 import logoBackup from "../assets/logo-backup.png";
 import textoMarca from "../assets/texto-marca.png";
 
 export default function Header({ onCartClick, cartItems = [] }) {
   const theme = useTheme();
+  const { user, isAuthenticated, logout } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation(); // 👈 detecta ruta activa
   
@@ -294,6 +298,30 @@ export default function Header({ onCartClick, cartItems = [] }) {
 
             {/* Theme Toggle - Desktop */}
             <ThemeToggle color="inherit" />
+
+            {/* Indicador de usuario - Desktop */}
+            {isAuthenticated() && (
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mx: 1 }}>
+                <PersonIcon sx={{ color: 'white', fontSize: 20 }} />
+                <Typography variant="body2" sx={{ color: 'white', fontWeight: 500 }}>
+                  {user.username}
+                </Typography>
+                <IconButton
+                  size="small"
+                  onClick={logout}
+                  sx={{
+                    color: 'white',
+                    ml: 0.5,
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                    }
+                  }}
+                  title="Cerrar sesión"
+                >
+                  <LogoutIcon fontSize="small" />
+                </IconButton>
+              </Box>
+            )}
 
             {/* Carrito (icono siempre visible en desktop) */}
             <Badge
