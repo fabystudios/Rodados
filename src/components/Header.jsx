@@ -350,37 +350,46 @@ export default function Header({ onCartClick, cartItems = [] }) {
                 <ShoppingCartIcon />
               </IconButton>
             </Badge>
+
+            {/* Icono de usuario - Desktop (como última opción) */}
+            <IconButton 
+              color="inherit"
+              onClick={isAuthenticated() ? logout : undefined}
+              sx={{
+                color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.6)',
+                ml: 1,
+                transition: 'all 0.3s ease',
+                cursor: isAuthenticated() ? 'pointer' : 'default',
+                '&:hover': {
+                  backgroundColor: isAuthenticated() ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+                  transform: isAuthenticated() ? 'scale(1.1)' : 'none',
+                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.8)'
+                }
+              }}
+              title={isAuthenticated() ? `Cerrar sesión (${user.username})` : 'No logueado'}
+            >
+              <PersonIcon />
+            </IconButton>
           </Box>
 
           {/* Menú móvil */}
           <Box sx={{ display: { xs: "flex", sm: "none" }, gap: 1 }}>
-            {/* Carrito móvil - siempre visible */}
-            <Badge
-              badgeContent={cartItemCount}
+            {/* Indicador de usuario móvil - reemplaza al carrito */}
+            <IconButton 
+              color="inherit"
               sx={{
-                "& .MuiBadge-badge": {
-                  background: "linear-gradient(45deg, #ff1744, #d50000)",
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: "0.7rem",
-                  minWidth: "18px",
-                  height: "18px",
-                  borderRadius: "9px",
-                  border: "2px solid white",
-                  boxShadow: "0 2px 6px rgba(255, 23, 68, 0.4)",
-                  animation: cartItemCount > 0 ? "cartPulseMobile 2s infinite" : "none",
-                  "@keyframes cartPulseMobile": {
-                    "0%": { transform: "scale(1)" },
-                    "50%": { transform: "scale(1.2)" },
-                    "100%": { transform: "scale(1)" }
-                  }
+                color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.4)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  transform: 'scale(1.1)',
+                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.7)'
                 }
               }}
+              title={isAuthenticated() ? `Logueado como ${user.username}` : 'No logueado'}
             >
-              <IconButton color="inherit" onClick={onCartClick}>
-                <ShoppingCartIcon />
-              </IconButton>
-            </Badge>
+              <PersonIcon />
+            </IconButton>
             
             {/* Menú hamburguesa */}
             <IconButton color="inherit" onClick={handleDrawerToggle}>
