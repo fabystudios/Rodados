@@ -855,4 +855,4 @@ SOFTWARE.
 
 </div>
 
-<!-- Deploy trigger - Sistema de autenticación completo implementado - Thu, Oct  9, 2025 14:35:22 -->
+<!-- Deploy trigger - Dev preview fix attempt - Thu, Oct  9, 2025 14:52:00 -->
