@@ -43,9 +43,17 @@ export default function Header({ onCartClick, cartItems = [] }) {
   };
 
   const handleUserIconClick = () => {
+    console.log('🔍 [DEBUG] User icon clicked - Auth state:', {
+      isAuthenticated: isAuthenticated(),
+      user: user,
+      userAgent: navigator.userAgent.includes('Mobile') ? 'Mobile' : 'Desktop'
+    });
+    
     if (isAuthenticated()) {
+      console.log('🚪 [DEBUG] Logging out user:', user?.username);
       logout();
     } else {
+      console.log('🔑 [DEBUG] Opening login modal');
       setShowLogin(true);
     }
   };
@@ -383,38 +391,57 @@ export default function Header({ onCartClick, cartItems = [] }) {
           </Box>
 
           {/* Menú móvil */}
-          <Box sx={{ display: { xs: "flex", sm: "none" }, gap: 1 }}>
-            {/* Indicador de usuario móvil - Login/Logout funcional */}
+          <Box sx={{ display: { xs: "flex", sm: "none" }, gap: 1, alignItems: 'center' }}>
+            {/* Indicador de usuario móvil con nombre si está logueado */}
+            {isAuthenticated() && (
+              <Typography 
+                variant="caption" 
+                sx={{ 
+                  color: 'white', 
+                  fontWeight: 600,
+                  fontSize: '0.7rem',
+                  maxWidth: '80px',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                {user?.username?.split(' ')[0]}
+              </Typography>
+            )}
+            
+            {/* Icono de usuario móvil - Login/Logout funcional */}
             <IconButton 
               color="inherit"
               onClick={handleUserIconClick}
               sx={{
-                color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.4)',
+                color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.6)',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 position: 'relative',
-                // Indicador visual de que es clickeable cuando está logueado
+                // Indicador visual más prominente para mobile
                 '&::after': isAuthenticated() ? {
                   content: '""',
                   position: 'absolute',
                   bottom: 2,
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  width: '4px',
-                  height: '4px',
+                  width: '6px',
+                  height: '6px',
                   borderRadius: '50%',
                   backgroundColor: '#4CAF50',
-                  animation: 'blink 2s infinite'
+                  boxShadow: '0 0 6px #4CAF50',
+                  animation: 'pulse 2s infinite'
                 } : {},
-                '@keyframes blink': {
-                  '0%': { opacity: 1 },
-                  '50%': { opacity: 0.4 },
-                  '100%': { opacity: 1 }
+                '@keyframes pulse': {
+                  '0%': { transform: 'translateX(-50%) scale(1)', opacity: 1 },
+                  '50%': { transform: 'translateX(-50%) scale(1.2)', opacity: 0.7 },
+                  '100%': { transform: 'translateX(-50%) scale(1)', opacity: 1 }
                 },
                 '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   transform: 'scale(1.1)',
-                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.8)'
+                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.9)'
                 }
               }}
               title={isAuthenticated() ? `Cerrar sesión (${user?.username})` : 'Iniciar sesión'}

@@ -122,13 +122,15 @@ const Login = ({ onClose, onLoginSuccess }) => {
     >
       <Card
         sx={{
-          maxWidth: 450,
+          maxWidth: { xs: '95vw', sm: 450 },
           width: '100%',
+          maxHeight: { xs: '90vh', sm: 'auto' },
+          overflowY: { xs: 'auto', sm: 'visible' },
           background: theme.palette.mode === 'dark' 
             ? 'rgba(30, 30, 30, 0.98)' 
             : 'rgba(255, 255, 255, 0.98)',
           backdropFilter: 'blur(20px)',
-          borderRadius: 3,
+          borderRadius: { xs: 2, sm: 3 },
           border: theme.palette.mode === 'dark'
             ? '1px solid rgba(255, 255, 255, 0.1)'
             : '1px solid rgba(255, 255, 255, 0.3)',
@@ -137,7 +139,7 @@ const Login = ({ onClose, onLoginSuccess }) => {
             : '0 20px 40px rgba(0, 0, 0, 0.2)',
         }}
       >
-        <CardContent sx={{ p: 4 }}>
+        <CardContent sx={{ p: { xs: 2, sm: 4 } }}>
           {/* Header */}
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
             <Typography 

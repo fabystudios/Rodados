@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CartWithAuth from "./components/CartWithAuth";
 import BottomNavigation from "./components/BottomNavigation";
+import DebugAuth from "./components/DebugAuth";
 
 // Pages
 import Home from "./pages/home";
@@ -172,6 +173,9 @@ export default function App() {
           height: { xs: 70, md: 0 },  // Altura del BottomNavigation
           display: { xs: 'block', md: 'none' }
         }} />
+
+        {/* 🔍 Debug component - Solo en desarrollo */}
+        <DebugAuth />
         </Box>
       </Router>
       </AuthProvider>

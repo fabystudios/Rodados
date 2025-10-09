@@ -45,13 +45,16 @@ export const AuthProvider = ({ children }) => {
       loginTime: new Date().toISOString(),
       provider: userData.provider || 'manual'
     };
+    console.log('🔑 [AuthContext] User logged in:', userWithId.username, 'Provider:', userWithId.provider);
     setUser(userWithId);
     return userWithId;
   };
 
   const logout = () => {
+    console.log('🚪 [AuthContext] Logging out user:', user?.username);
     setUser(null);
     localStorage.removeItem('authUser');
+    console.log('✅ [AuthContext] User logged out successfully');
   };
 
   const isAuthenticated = () => {
