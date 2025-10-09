@@ -1,5 +1,5 @@
 // src/pages/Products.jsx
-import React, { useState } from "react";
+import React from "react";
 import { Container, Typography, useTheme, Box, Button, ButtonGroup } from "@mui/material";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductList from "../components/ProductList";

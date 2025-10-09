@@ -26,7 +26,7 @@ export default function ProductDetail({
   removeItem,
   clearCart,
 }) {
-  const { categoria, id } = useParams();
+  const { id } = useParams();
   const theme = useTheme();
   const [product, setProduct] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
