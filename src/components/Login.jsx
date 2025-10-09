@@ -290,7 +290,7 @@ const Login = ({ onClose, onLoginSuccess }) => {
                     <Icon sx={{ fontSize: 20 }} />
                   )}
                   <Typography variant="body2" fontWeight={500}>
-                    {provider.name}
+                    {isLoading ? 'Conectando...' : provider.name}
                   </Typography>
                 </Button>
               );

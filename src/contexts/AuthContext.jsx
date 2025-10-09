@@ -62,11 +62,50 @@ export const AuthProvider = ({ children }) => {
   const loginWithProvider = async (provider) => {
     return new Promise((resolve) => {
       setTimeout(() => {
+        // Generar emails más realistas según el provider
+        const getProviderData = (providerName) => {
+          const timestamp = Date.now().toString().slice(-4);
+          
+          switch (providerName.toLowerCase()) {
+            case 'google':
+              return {
+                username: 'Juan Pérez',
+                email: `juan.perez${timestamp}@gmail.com`,
+                domain: 'gmail.com'
+              };
+            case 'facebook':
+              return {
+                username: 'María González',
+                email: `maria.gonzalez${timestamp}@outlook.com`,
+                domain: 'facebook.com'
+              };
+            case 'instagram':
+              return {
+                username: 'Carlos Rodríguez',
+                email: `carlos.rodriguez${timestamp}@hotmail.com`,
+                domain: 'instagram.com'
+              };
+            case 'twitter':
+              return {
+                username: 'Ana Martínez',
+                email: `ana.martinez${timestamp}@yahoo.com`,
+                domain: 'twitter.com'
+              };
+            default:
+              return {
+                username: `Usuario ${providerName}`,
+                email: `usuario${timestamp}@${providerName}.com`,
+                domain: `${providerName}.com`
+              };
+          }
+        };
+
+        const providerData = getProviderData(provider);
         const mockUser = {
-          username: `Usuario ${provider}`,
-          email: `user@${provider}.com`,
+          username: providerData.username,
+          email: providerData.email,
           provider: provider,
-          avatar: `https://ui-avatars.com/api/?name=${provider}&background=4CAF50&color=fff`
+          avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(providerData.username)}&background=4CAF50&color=fff`
         };
         const loggedUser = login(mockUser);
         resolve(loggedUser);
