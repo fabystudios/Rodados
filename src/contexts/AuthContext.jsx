@@ -62,42 +62,56 @@ export const AuthProvider = ({ children }) => {
   const loginWithProvider = async (provider) => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        // Generar emails más realistas según el provider
+        // Generar usuarios realistas según el provider
         const getProviderData = (providerName) => {
           const timestamp = Date.now().toString().slice(-4);
           
-          switch (providerName.toLowerCase()) {
-            case 'google':
-              return {
-                username: 'Juan Pérez',
-                email: `juan.perez${timestamp}@gmail.com`,
-                domain: 'gmail.com'
-              };
-            case 'facebook':
-              return {
-                username: 'María González',
-                email: `maria.gonzalez${timestamp}@outlook.com`,
-                domain: 'facebook.com'
-              };
-            case 'instagram':
-              return {
-                username: 'Carlos Rodríguez',
-                email: `carlos.rodriguez${timestamp}@hotmail.com`,
-                domain: 'instagram.com'
-              };
-            case 'twitter':
-              return {
-                username: 'Ana Martínez',
-                email: `ana.martinez${timestamp}@yahoo.com`,
-                domain: 'twitter.com'
-              };
-            default:
-              return {
-                username: `Usuario ${providerName}`,
-                email: `usuario${timestamp}@${providerName}.com`,
-                domain: `${providerName}.com`
-              };
-          }
+          // Arrays de nombres realistas
+          const usuarios = {
+            google: [
+              { nombre: 'Juan', apellido: 'Pérez', email: 'gmail.com' },
+              { nombre: 'Laura', apellido: 'Martínez', email: 'gmail.com' },
+              { nombre: 'Diego', apellido: 'Silva', email: 'gmail.com' },
+              { nombre: 'Camila', apellido: 'Torres', email: 'gmail.com' },
+              { nombre: 'Sebastián', apellido: 'Ruiz', email: 'gmail.com' }
+            ],
+            facebook: [
+              { nombre: 'María', apellido: 'González', email: 'outlook.com' },
+              { nombre: 'Alejandro', apellido: 'Fernández', email: 'hotmail.com' },
+              { nombre: 'Valentina', apellido: 'López', email: 'outlook.com' },
+              { nombre: 'Mateo', apellido: 'Ramírez', email: 'hotmail.com' },
+              { nombre: 'Sofia', apellido: 'Castro', email: 'outlook.com' }
+            ],
+            instagram: [
+              { nombre: 'Carlos', apellido: 'Rodríguez', email: 'hotmail.com' },
+              { nombre: 'Isabella', apellido: 'Morales', email: 'gmail.com' },
+              { nombre: 'Nicolás', apellido: 'Herrera', email: 'yahoo.com' },
+              { nombre: 'Antonella', apellido: 'Vargas', email: 'hotmail.com' },
+              { nombre: 'Emilio', apellido: 'Mendoza', email: 'gmail.com' }
+            ],
+            twitter: [
+              { nombre: 'Ana', apellido: 'Martínez', email: 'yahoo.com' },
+              { nombre: 'Rodrigo', apellido: 'Jiménez', email: 'gmail.com' },
+              { nombre: 'Luciana', apellido: 'Ortega', email: 'yahoo.com' },
+              { nombre: 'Gabriel', apellido: 'Delgado', email: 'outlook.com' },
+              { nombre: 'Renata', apellido: 'Vega', email: 'yahoo.com' }
+            ]
+          };
+
+          // Seleccionar usuario random del provider
+          const usuariosProvider = usuarios[providerName.toLowerCase()] || [
+            { nombre: 'Usuario', apellido: providerName, email: `${providerName}.com` }
+          ];
+          
+          const usuarioRandom = usuariosProvider[Math.floor(Math.random() * usuariosProvider.length)];
+          const nombreCompleto = `${usuarioRandom.nombre} ${usuarioRandom.apellido}`;
+          const emailUsuario = `${usuarioRandom.nombre.toLowerCase()}.${usuarioRandom.apellido.toLowerCase()}${timestamp}@${usuarioRandom.email}`;
+
+          return {
+            username: nombreCompleto,
+            email: emailUsuario,
+            domain: usuarioRandom.email
+          };
         };
 
         const providerData = getProviderData(provider);

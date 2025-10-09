@@ -23,6 +23,7 @@ import ThemeToggle from "./ThemeToggle";
 import { useAuth } from "../contexts/AuthContext";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
+import Login from "./Login";
 import logoPpal from "../assets/logo-ppal.png";
 import logoBackup from "../assets/logo-backup.png";
 import textoMarca from "../assets/texto-marca.png";
@@ -31,6 +32,7 @@ export default function Header({ onCartClick, cartItems = [] }) {
   const theme = useTheme();
   const { user, isAuthenticated, logout } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const location = useLocation(); // 👈 detecta ruta activa
   
   // Calcular total de unidades en el carrito (como MercadoLibre)
@@ -38,6 +40,14 @@ export default function Header({ onCartClick, cartItems = [] }) {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleUserIconClick = () => {
+    if (isAuthenticated()) {
+      logout();
+    } else {
+      setShowLogin(true);
+    }
   };
 
   const navItems = [
@@ -354,19 +364,19 @@ export default function Header({ onCartClick, cartItems = [] }) {
             {/* Icono de usuario - Desktop (como última opción) */}
             <IconButton 
               color="inherit"
-              onClick={isAuthenticated() ? logout : undefined}
+              onClick={handleUserIconClick}
               sx={{
                 color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.6)',
                 ml: 1,
                 transition: 'all 0.3s ease',
-                cursor: isAuthenticated() ? 'pointer' : 'default',
+                cursor: 'pointer',
                 '&:hover': {
-                  backgroundColor: isAuthenticated() ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
-                  transform: isAuthenticated() ? 'scale(1.1)' : 'none',
-                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.8)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  transform: 'scale(1.1)',
+                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.9)'
                 }
               }}
-              title={isAuthenticated() ? `Cerrar sesión (${user.username})` : 'No logueado'}
+              title={isAuthenticated() ? `Cerrar sesión (${user?.username})` : 'Iniciar sesión'}
             >
               <PersonIcon />
             </IconButton>
@@ -374,14 +384,14 @@ export default function Header({ onCartClick, cartItems = [] }) {
 
           {/* Menú móvil */}
           <Box sx={{ display: { xs: "flex", sm: "none" }, gap: 1 }}>
-            {/* Indicador de usuario móvil - con funcionalidad logout */}
+            {/* Indicador de usuario móvil - Login/Logout funcional */}
             <IconButton 
               color="inherit"
-              onClick={isAuthenticated() ? logout : undefined}
+              onClick={handleUserIconClick}
               sx={{
                 color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.4)',
                 transition: 'all 0.3s ease',
-                cursor: isAuthenticated() ? 'pointer' : 'default',
+                cursor: 'pointer',
                 position: 'relative',
                 // Indicador visual de que es clickeable cuando está logueado
                 '&::after': isAuthenticated() ? {
@@ -402,12 +412,12 @@ export default function Header({ onCartClick, cartItems = [] }) {
                   '100%': { opacity: 1 }
                 },
                 '&:hover': {
-                  backgroundColor: isAuthenticated() ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
-                  transform: isAuthenticated() ? 'scale(1.1)' : 'none',
-                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.7)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  transform: 'scale(1.1)',
+                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.8)'
                 }
               }}
-              title={isAuthenticated() ? `Cerrar sesión (${user.username})` : 'No logueado'}
+              title={isAuthenticated() ? `Cerrar sesión (${user?.username})` : 'Iniciar sesión'}
             >
               <PersonIcon />
             </IconButton>
@@ -435,6 +445,14 @@ export default function Header({ onCartClick, cartItems = [] }) {
       >
         {drawer}
       </Drawer>
+
+      {/* Modal de Login desde Header */}
+      {showLogin && (
+        <Login 
+          onClose={() => setShowLogin(false)}
+          onLoginSuccess={() => setShowLogin(false)}
+        />
+      )}
     </>
   );
 }
