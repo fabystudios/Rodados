@@ -1,4 +1,10 @@
 {
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "dev": true
+    }
+  },
   "rewrites": [
     {
       "source": "/((?!api/.*)(?!_next/.*)(?!favicon.ico)(?!.*\\.).*)",
