@@ -14,6 +14,18 @@ const DebugAuth = () => {
     window.location.reload();
   };
 
+  const handleClearProviderUsers = () => {
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('auth_') && key.includes('_user')) {
+        keysToRemove.push(key);
+      }
+    }
+    keysToRemove.forEach(key => localStorage.removeItem(key));
+    alert(`Eliminados ${keysToRemove.length} usuarios de providers`);
+  };
+
   return (
     <Card 
       sx={{
@@ -64,9 +76,17 @@ const DebugAuth = () => {
         <Button 
           size="small" 
           variant="outlined" 
+          onClick={handleClearProviderUsers}
+          color="warning"
+        >
+          Reset Providers
+        </Button>
+        <Button 
+          size="small" 
+          variant="outlined" 
           onClick={handleClearLocalStorage}
         >
-          Clear Storage
+          Clear All Storage
         </Button>
       </Box>
 

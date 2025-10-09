@@ -67,6 +67,22 @@ export const AuthProvider = ({ children }) => {
       setTimeout(() => {
         // Generar usuarios realistas según el provider
         const getProviderData = (providerName) => {
+          // 🔑 Verificar si ya existe un usuario para este provider en localStorage
+          const savedProviderKey = `auth_${providerName.toLowerCase()}_user`;
+          const savedProviderUser = localStorage.getItem(savedProviderKey);
+          
+          if (savedProviderUser) {
+            try {
+              const userData = JSON.parse(savedProviderUser);
+              console.log(`🔄 [AuthContext] Usuario existente para ${providerName}:`, userData.username);
+              return userData;
+            } catch {
+              console.warn(`⚠️ [AuthContext] Error parsing saved user for ${providerName}, generating new one`);
+              localStorage.removeItem(savedProviderKey);
+            }
+          }
+          
+          console.log(`🆕 [AuthContext] Creando nuevo usuario para ${providerName}`);
           const timestamp = Date.now().toString().slice(-4);
           
           // Arrays de nombres realistas
@@ -101,7 +117,7 @@ export const AuthProvider = ({ children }) => {
             ]
           };
 
-          // Seleccionar usuario random del provider
+          // Seleccionar usuario random del provider (solo primera vez)
           const usuariosProvider = usuarios[providerName.toLowerCase()] || [
             { nombre: 'Usuario', apellido: providerName, email: `${providerName}.com` }
           ];
@@ -110,11 +126,17 @@ export const AuthProvider = ({ children }) => {
           const nombreCompleto = `${usuarioRandom.nombre} ${usuarioRandom.apellido}`;
           const emailUsuario = `${usuarioRandom.nombre.toLowerCase()}.${usuarioRandom.apellido.toLowerCase()}${timestamp}@${usuarioRandom.email}`;
 
-          return {
+          const newUserData = {
             username: nombreCompleto,
             email: emailUsuario,
             domain: usuarioRandom.email
           };
+          
+          // 💾 Guardar el usuario para próximas veces
+          localStorage.setItem(savedProviderKey, JSON.stringify(newUserData));
+          console.log(`💾 [AuthContext] Usuario guardado para ${providerName}:`, newUserData.username);
+          
+          return newUserData;
         };
 
         const providerData = getProviderData(provider);
