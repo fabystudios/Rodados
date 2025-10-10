@@ -10,7 +10,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CartWithAuth from "./components/CartWithAuth";
 import BottomNavigation from "./components/BottomNavigation";
-import DebugAuth from "./components/DebugAuth";
+// import DebugAuth from "./components/DebugAuth"; // 🔧 Desactivado temporalmente - Reactivar para debugging
 
 // Pages
 import Home from "./pages/home";
@@ -175,7 +175,7 @@ export default function App() {
         }} />
 
         {/* 🔍 Debug component - Solo en desarrollo */}
-        <DebugAuth />
+        {/* <DebugAuth /> */} {/* 🔧 Desactivado temporalmente - Reactivar para debugging */}
         </Box>
       </Router>
       </AuthProvider>
