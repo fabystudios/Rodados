@@ -429,28 +429,6 @@ export default function Header({ onCartClick, cartItems = [] }) {
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 position: 'relative',
-                // Indicador de estado en esquina superior derecha
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 2,
-                  right: 2,
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  backgroundColor: isAuthenticated() ? '#00E676' : '#FF1744', // Verde vivaz o rojo vivaz
-                  boxShadow: isAuthenticated() 
-                    ? '0 0 8px #00E676, 0 0 12px rgba(0, 230, 118, 0.4)' 
-                    : '0 0 8px #FF1744, 0 0 12px rgba(255, 23, 68, 0.4)',
-                  border: '1px solid white',
-                  animation: 'statusPulse 2s infinite',
-                  zIndex: 1
-                },
-                '@keyframes statusPulse': {
-                  '0%': { transform: 'scale(1)', opacity: 1 },
-                  '50%': { transform: 'scale(1.3)', opacity: 0.8 },
-                  '100%': { transform: 'scale(1)', opacity: 1 }
-                },
                 '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   transform: 'scale(1.1)',
