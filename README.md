@@ -212,7 +212,7 @@
 
 </div>
 
-Implementamos un sistema de autenticación completo con **login social** y **persistencia inteligente**:
+Se Implementa un sistema de autenticación completo con **login social** y **persistencia inteligente**:
 
 ### ✨ **Características del Sistema:**
 
