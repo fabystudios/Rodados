@@ -374,14 +374,20 @@ export default function Header({ onCartClick, cartItems = [] }) {
               color="inherit"
               onClick={handleUserIconClick}
               sx={{
-                color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.6)',
+                color: isAuthenticated() 
+                  ? '#66BB6A' // Verde brillante cuando logueado (visible en ambos temas)
+                  : theme.palette.mode === 'dark' 
+                    ? 'rgba(255, 255, 255, 0.8)' // Blanco más visible en modo dark
+                    : 'rgba(255, 255, 255, 0.95)', // Blanco casi opaco en modo light
                 ml: 1,
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   transform: 'scale(1.1)',
-                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.9)'
+                  color: isAuthenticated() 
+                    ? '#81C784' // Verde más claro al hover cuando logueado
+                    : 'rgba(255, 255, 255, 1)' // Blanco total al hover cuando deslogueado
                 }
               }}
               title={isAuthenticated() ? `Cerrar sesión (${user?.username})` : 'Iniciar sesión'}
@@ -415,7 +421,11 @@ export default function Header({ onCartClick, cartItems = [] }) {
               color="inherit"
               onClick={handleUserIconClick}
               sx={{
-                color: isAuthenticated() ? '#4CAF50' : 'rgba(255, 255, 255, 0.6)',
+                color: isAuthenticated() 
+                  ? '#66BB6A' // Verde brillante cuando logueado (visible en ambos temas)
+                  : theme.palette.mode === 'dark' 
+                    ? 'rgba(255, 255, 255, 0.8)' // Blanco más visible en modo dark
+                    : 'rgba(255, 255, 255, 0.95)', // Blanco casi opaco en modo light
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 position: 'relative',
@@ -444,7 +454,9 @@ export default function Header({ onCartClick, cartItems = [] }) {
                 '&:hover': {
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   transform: 'scale(1.1)',
-                  color: isAuthenticated() ? '#66bb6a' : 'rgba(255, 255, 255, 0.9)'
+                  color: isAuthenticated() 
+                    ? '#81C784' // Verde más claro al hover cuando logueado
+                    : 'rgba(255, 255, 255, 1)' // Blanco total al hover cuando deslogueado
                 }
               }}
               title={isAuthenticated() ? `Cerrar sesión (${user?.username})` : 'Iniciar sesión'}
