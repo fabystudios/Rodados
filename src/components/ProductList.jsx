@@ -17,7 +17,8 @@ import { styled } from "@mui/material/styles";
 import "../styles/ProductList.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import spinnerImage from "../assets/spinner.png";
+import spinnerImage from "/assets/spinner.png";
+import errorImage from "/assets/desconectado.png";
 
 // Estilos MD3 para Card y Button - Glassmorphism como Home
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -67,7 +68,7 @@ export default function ProductList({ onAddToCart, cartItems = [], categoryFilte
         setError("Error al cargar productos. Intenta nuevamente más tarde.");
         setProducts([]);
         setFilteredProducts([]);
-        console.error("Error al cargar productos:", err);
+        console.error("Error al cargar productos:", err);      
       });
   }, []);
 
@@ -101,6 +102,11 @@ export default function ProductList({ onAddToCart, cartItems = [], categoryFilte
     <Grid container spacing={3} justifyContent="center">
       {error ? (
         <Box sx={{ width: "100%", textAlign: "center", mt: 2 }}>
+          <img
+            src={errorImage}
+            alt="Error de conexión"
+            style={{ width: 150, marginBottom: 20, display: "inline-block" }}
+          />
           <Typography variant="h6" sx={{ 
             mb: 2, 
             color: theme.palette.error.main,
