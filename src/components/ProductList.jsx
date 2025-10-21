@@ -50,15 +50,25 @@ export default function ProductList({ onAddToCart, cartItems = [], categoryFilte
   const theme = useTheme();
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("https://68362e14664e72d28e401640.mockapi.io/producto")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("No se pudo cargar productos");
+        return res.json();
+      })
       .then((data) => {
         setProducts(data);
         setFilteredProducts(data); // Inicialmente mostrar todos
+        setError("");
       })
-      .catch((err) => console.error("Error al cargar productos:", err));
+      .catch((err) => {
+        setError("Error al cargar productos. Intenta nuevamente más tarde.");
+        setProducts([]);
+        setFilteredProducts([]);
+        console.error("Error al cargar productos:", err);
+      });
   }, []);
 
   // Filtrar productos según la categoría seleccionada
@@ -89,7 +99,19 @@ export default function ProductList({ onAddToCart, cartItems = [], categoryFilte
 
   return (
     <Grid container spacing={3} justifyContent="center">
-      {filteredProducts.length === 0 ? (
+      {error ? (
+        <Box sx={{ width: "100%", textAlign: "center", mt: 2 }}>
+          <Typography variant="h6" sx={{ 
+            mb: 2, 
+            color: theme.palette.error.main,
+            textShadow: theme.palette.mode === 'dark'
+              ? "2px 2px 8px rgba(0,0,0,0.5)"
+              : "2px 2px 8px rgba(0,0,0,0.18)"
+          }}>
+            {error}
+          </Typography>
+        </Box>
+      ) : filteredProducts.length === 0 ? (
         <Box sx={{ width: "100%", textAlign: "center", mt: 2 }}>
           <Typography variant="h6" sx={{ 
             mb: 2, 
