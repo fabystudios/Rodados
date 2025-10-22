@@ -284,7 +284,9 @@ export default function Header({ onCartClick, cartItems = [] }) {
               py: 1,
               transition: "filter 0.2s",
               "&:hover": { filter: "brightness(1.3)" },
+              cursor: "pointer"
             }}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <Box
               component="img"
