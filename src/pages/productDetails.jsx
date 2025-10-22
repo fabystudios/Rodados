@@ -152,7 +152,7 @@ export default function ProductDetail({
               width: { xs: "100%", md: 300 },
               height: { xs: 250, md: 300 },
               background: theme.palette.mode === 'dark' 
-                ? 'linear-gradient(135deg, #7c4dff 0%, #9c27b0 50%, #673ab7 100%)'
+                ? 'linear-gradient(135deg, #8e6c88 0%, #b8a3b8 50%, #d4c2d4 100%)'
                 : '#f5f5f5',
               borderRadius: 2,
               display: 'flex',
